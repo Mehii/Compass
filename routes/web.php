@@ -21,6 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home','App\Http\Controllers\HomeController@index')->name('home');
+
+
+Route::get('/profile/cars','App\Http\Controllers\CarsController@create');
+Route::get('/profile/boats','App\Http\Controllers\BoatsController@create');
+Route::get('/profile/offices','App\Http\Controllers\OfficesController@create');
+
+
 Route::get('/profile/{user}','App\Http\Controllers\ProfilesController@index')->name('profile.show');
 //Route::get('/home', [App\Http\Controllers\ProfilesController::class, 'index'])->name('home'); Same as the what i have above it
 

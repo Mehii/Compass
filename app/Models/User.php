@@ -44,6 +44,19 @@ class User extends Authenticatable
 
     public function profile(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Profile::class);//Belongs_to_profile
+        return $this->hasOne(Profile::class);
+    }
+
+    public function cars(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Car::class);
+    }
+    public function boats(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Boat::class);
+    }
+    public function offices(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Office::class);
     }
 }
