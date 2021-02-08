@@ -10,4 +10,8 @@ class BoatsController extends Controller
     {
         return view('user_offers.boats');
     }
+    public function store()
+    {
+        dd(\request()->all());
+    }
 }

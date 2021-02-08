@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="700e0a4b-cdf7-489f-a645-e4361d3b99d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env copy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Compass.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Compass.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BoatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BoatsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OfficesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OfficesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Car.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Car.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_22_221026_create_cars_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_22_221026_create_cars_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_22_221059_create_boats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_22_221059_create_boats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_22_221158_create_offices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_22_221158_create_offices_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/boats.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/boats.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/cars.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/cars.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/offices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/offices.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +35,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -129,6 +153,7 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nRKE9PSOj7KNyyO5zYPshHDgMU" />
@@ -141,6 +166,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user_offers" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -166,7 +192,14 @@
       <option name="presentableId" value="Default" />
       <updated>1611347354453</updated>
       <workItem from="1611347361670" duration="5069000" />
-      <workItem from="1611437779753" duration="4062000" />
+      <workItem from="1611437779753" duration="4407000" />
+      <workItem from="1611493836079" duration="2804000" />
+      <workItem from="1611581605963" duration="16764000" />
+      <workItem from="1611676004640" duration="10031000" />
+      <workItem from="1612203646249" duration="12733000" />
+      <workItem from="1612289827918" duration="6939000" />
+      <workItem from="1612462790552" duration="30000" />
+      <workItem from="1612779706223" duration="640000" />
     </task>
     <servers />
   </component>
@@ -183,5 +216,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

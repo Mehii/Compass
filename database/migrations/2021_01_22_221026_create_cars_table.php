@@ -16,9 +16,29 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->text('car_name');
-            $table->text('description');//have to separate to exact details
-            $table->string('image');
+
+            #region type of the car
+            $table->text('where_can_u_get_it');
+            #endregion
+
+            #region exterior
+            $table->text('colour_of_car');
+            $table->integer('number_of_doors');
+            $table->boolean('automatic_windows');
+            #endregion
+
+            #region interior
+            $table->text('car_manufacturer');
+            $table->text('type_of_gearbox');
+            $table->boolean('air_condition');
+            $table->boolean('abs');
+            #endregion
+
+            #region  image && cost && deposit
+            $table->string('car_image');
+            $table->double('car_cost_of_renting');
+            $table->double('car_deposit');
+            #endregion
             $table->timestamps();
 
             $table->index('user_id');

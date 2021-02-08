@@ -8,15 +8,24 @@
             Profile Image place
         </div>
         <div class="col-9 pt-5">
-            <h1>{{$user->name }}</h1>
+            <h1>{{$user->name}}</h1>
         </div>
     </div>
     <div class="row">
         <!-- Main Page-n 3 choosable option-Car-Boat-Office -->
-        <div class="col-9"><a href="#">Add New Item</a></div> <!-- choose from list which type && d-flex justify-content-between-->
+        <div class="col-9"><a href="">Add New Item</a></div> <!-- choose from list which type && d-flex justify-content-between-->
         <div class="col-9">{{ $user->email }}</div>
         <div class="col-9">{{ $user->password }}</div>
         <div class="col-9">{{ $user->profile->introduction ?? 'Not filled yet' }}</div>
+    </div>
+    <div class="row">
+        @foreach($user->cars as $car)
+            <div class="col-4 pb-4">
+                <a href="/myprofile/items/car/{{$car->id}}">
+                    <img src="/storage/{{ $car->car_image }}" class="w-100" alt="">
+                </a>
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
