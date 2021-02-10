@@ -36,12 +36,16 @@ Route::post('/myprofile/items/office','App\Http\Controllers\OfficesController@st
 #endregion
 
 #region route for item description
-
 Route::get('/myprofile/items/car/{car}','App\Http\Controllers\CarsController@show');
 Route::get('/myprofile/items/boat/{id}','App\Http\Controllers\BoatsController@show');
 Route::get('/myprofile/items/office/{id}','App\Http\Controllers\OfficesController@show');
-
 #endregion
+
+#region edit&update profile
+Route::get('/myprofile/{user}/edit','App\Http\Controllers\ProfilesController@edit')->name('profile.edit');
+Route::patch('/myprofile/{user}','App\Http\Controllers\ProfilesController@update')->name('profile.update');
+#endregion
+
 #region profile
 Route::get('/myprofile/{user}','App\Http\Controllers\ProfilesController@index')->name('profile.show');
 //Route::get('/myprofile/{name}','App\Http\Controllers\ProfilesController@index')->name('profile.show'); //more userfriendly

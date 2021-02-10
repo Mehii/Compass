@@ -13,8 +13,10 @@
     </div>
     <div class="row">
         <!-- Main Page-n 3 choosable option-Car-Boat-Office -->
-        <div class="col-9"><a href="">Add New Item</a></div> <!-- choose from list which type && d-flex justify-content-between-->
-        <div class="col-9">{{ $user->email }}</div>
+        @can('update',$user->profile)
+        <div class="col-9"><a href="/myprofile/items/car/add_new_car">Add New Car</a></div> <!-- choose from list which type && d-flex justify-content-between-->
+        @endcan
+            <div class="col-9">{{ $user->email }}</div>
         <div class="col-9">{{ $user->password }}</div>
         <div class="col-9">{{ $user->profile->introduction ?? 'Not filled yet' }}</div>
     </div>

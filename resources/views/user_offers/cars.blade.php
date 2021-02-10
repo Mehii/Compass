@@ -5,6 +5,7 @@
         <form action="/myprofile/items/car" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="row">
+                <h1></h1>
                 <div class="col-8 offset-2">
 
                     <div class="row"><h2>Details of the Car</h2></div><!-- select2 -->

@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-12">
                 {{ $car->id }}
+                <img src="/storage/{{ $car->car_image }}" class="w-100" alt="">
             </div>
         </div>
     </div>
