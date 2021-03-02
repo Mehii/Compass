@@ -15,7 +15,7 @@
                                type="text"
                                class="form-control @error('introduction') is-invalid @enderror"
                                name="introduction"
-                               value="{{$user->profile->introduction ??  old('introduction')}}"
+                               value="{{$user->profile->introduction}}"
                                autocomplete="introduction" autofocus>
 
                         @error('introduction')
@@ -49,7 +49,7 @@
                         @enderror
                     </div>
                     <div class="row pt-4">
-                        <button class="btn btn-primary ">Save</button>
+                        <button class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>

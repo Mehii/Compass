@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <form action="/myprofile/items/car" enctype="multipart/form-data" method="POST">
             @csrf
@@ -9,7 +10,7 @@
                 <div class="col-8 offset-2">
 
                     <div class="row"><h2>Details of the Car</h2></div><!-- select2 -->
-                    <div class="form-group row">
+                   <!--<div class="form-group row">
                         <label for="where_can_u_get_it" class="col-md-4 col-form-label text-md-left">Shop</label>
                         <input id="where_can_u_get_it"
                                type="text"
@@ -18,13 +19,19 @@
                                value="{{ old('where_can_u_get_it') }}"
                                autocomplete="Valletta" autofocus>
 
+
                         @error('where_can_u_get_it')
                         <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                    </div>*/-->
+                    <div class="form-group row">
+                            <select class="city_choose" name="where_can_u_get_it" multiple="multiple">
+                                <option value="Paul Bay">Paul Bay</option>
+                                <option value="Valletta">Valletta</option>
+                            </select>
                     </div>
-
                     <div class="form-group row">
                         <label for="colour_of_car" class="col-md-4 col-form-label text-md-left">Colour</label>
                         <input id="colour_of_car"
@@ -172,5 +179,10 @@
                 </div>
             </div>
         </form>
+
     </div>
 @endsection
+
+
+
+

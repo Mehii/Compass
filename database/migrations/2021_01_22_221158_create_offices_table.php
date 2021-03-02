@@ -19,12 +19,12 @@ class CreateOfficesTable extends Migration
 
             #region geographical details
             $table->text('name_of_the_city');
-            $table->text('geographical_coordinate');
+   //         $table->text('geographical_coordinate');
             #endregion
 
             #region details of the office
             $table->text('furniture'); //no,half,full
-            $table->integer('Building_floor');//10
+            $table->integer('building_floor');//10
             $table->integer('floor');//4
             $table->integer('number_of_rooms');//2
             $table->double('square_meter');//64.3

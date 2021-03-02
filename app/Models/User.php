@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -41,21 +43,31 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
 
-    public function profile(): \Illuminate\Database\Eloquent\Relations\HasOne
+        static::created(function ($user){
+            $user->profile()->create([
+                'introduction'=>'This profile doesnt have introduction',
+            ]);
+        });
+    }
+
+    public function profile(): HasOne
     {
         return $this->hasOne(Profile::class);
     }
 
-    public function cars(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function cars(): HasMany
     {
         return $this->hasMany(Car::class);
     }
-    public function boats(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function boats(): HasMany
     {
         return $this->hasMany(Boat::class);
     }
-    public function offices(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function offices(): HasMany
     {
         return $this->hasMany(Office::class);
     }

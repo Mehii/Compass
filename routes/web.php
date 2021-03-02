@@ -20,8 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+#region
 Route::get('/home','App\Http\Controllers\HomeController@index')->name('home');
 //Route::get('/home', [App\Http\Controllers\ProfilesController::class, 'index'])->name('home'); Same as the what i have above it
+
+#endregion
 
 #region routes for new items
 Route::get('/myprofile/items/car/add_new_car','App\Http\Controllers\CarsController@create');
@@ -37,13 +40,31 @@ Route::post('/myprofile/items/office','App\Http\Controllers\OfficesController@st
 
 #region route for item description
 Route::get('/myprofile/items/car/{car}','App\Http\Controllers\CarsController@show');
-Route::get('/myprofile/items/boat/{id}','App\Http\Controllers\BoatsController@show');
-Route::get('/myprofile/items/office/{id}','App\Http\Controllers\OfficesController@show');
+Route::get('/myprofile/items/boat/{boat}','App\Http\Controllers\BoatsController@show');
+Route::get('/myprofile/items/office/{office}','App\Http\Controllers\OfficesController@show');
 #endregion
 
 #region edit&update profile
 Route::get('/myprofile/{user}/edit','App\Http\Controllers\ProfilesController@edit')->name('profile.edit');
 Route::patch('/myprofile/{user}','App\Http\Controllers\ProfilesController@update')->name('profile.update');
+#endregion
+
+#region item edit&update post
+Route::get('/myprofile/items/car/{car}/edit','App\Http\Controllers\CarsController@edit')->name('car.edit');
+Route::patch('/myprofile/items/car/{car}','App\Http\Controllers\CarsController@update')->name('car.update');
+
+Route::get('/myprofile/items/office/{office}/edit','App\Http\Controllers\OfficesController@edit')->name('office.edit');
+Route::patch('/myprofile/items/office/{office}','App\Http\Controllers\OfficesController@update')->name('office.update');
+
+Route::get('/myprofile/items/boat/{boat}/edit','App\Http\Controllers\BoatsController@edit')->name('boat.edit');
+Route::patch('/myprofile/items/boat/{boat}','App\Http\Controllers\BoatsController@update')->name('boat.update');
+#endregion
+
+#region item destroy
+Route::delete('/myprofile/items/car/{car}','App\Http\Controllers\CarsController@destroy')->name('car.destroy');
+Route::delete('/myprofile/items/office/{office}','App\Http\Controllers\OfficesController@destroy')->name('office.destroy');
+Route::delete('/myprofile/items/boat/{boat}','App\Http\Controllers\BoatsController@destroy')->name('boat.destroy');
+
 #endregion
 
 #region profile
