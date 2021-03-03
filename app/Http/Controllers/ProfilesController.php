@@ -12,11 +12,9 @@ class ProfilesController extends Controller
         //$user=User::find($user);//Casual find, doesnt throw 404 not found exceptionTP
         //dd($user);
         //$user=User::findOrFail($user); //If user not existing throw an 404 exception lvl2
-        $follows= (auth()->user()) ? auth()->user()->following->contains($user->id):false;
-
-
-
-        return view('profiles.index', compact('user','follows'));
+        return view('profiles.index', [
+            'user'=>$user,
+        ]);
     }
 
     public function edit(User $user)
@@ -38,7 +36,7 @@ class ProfilesController extends Controller
         if (request('image'))
         {
             $Profile_picture = request('image')->store('uploads/profiles', 'public');
-            $image = Image::make(public_path("storage/{$Profile_picture}"))->fit(800, 800);
+            $image = Image::make(public_path("storage/{$Profile_picture}"))->fit(1000, 1000);
             $image->save();
 
             $image_array=['image'=>$Profile_picture];

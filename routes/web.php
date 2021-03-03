@@ -20,8 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::post('follow/{user}','App\Http\Controllers\FollowsController@store');
-
 #region
 Route::get('/home','App\Http\Controllers\HomeController@index')->name('home');
 //Route::get('/home', [App\Http\Controllers\ProfilesController::class, 'index'])->name('home'); Same as the what i have above it

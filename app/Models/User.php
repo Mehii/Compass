@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -55,10 +54,6 @@ class User extends Authenticatable
         });
     }
 
-    public function following(): BelongsToMany
-    {
-        return $this->belongsToMany(Profile::class);
-    }
     public function profile(): HasOne
     {
         return $this->hasOne(Profile::class);
@@ -66,14 +61,14 @@ class User extends Authenticatable
 
     public function cars(): HasMany
     {
-        return $this->hasMany(Car::class)->orderBy('created_at','DESC');
+        return $this->hasMany(Car::class);
     }
     public function boats(): HasMany
     {
-        return $this->hasMany(Boat::class)->orderBy('created_at','DESC');;
+        return $this->hasMany(Boat::class);
     }
     public function offices(): HasMany
     {
-        return $this->hasMany(Office::class)->orderBy('created_at','DESC');;
+        return $this->hasMany(Office::class);
     }
 }
