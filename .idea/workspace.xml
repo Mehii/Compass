@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="700e0a4b-cdf7-489f-a645-e4361d3b99d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user_offers/boats/boat_show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user_offers/boats/boats_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user_offers/cars/cars_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user_offers/cars/cars_show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user_offers/offices/office_show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BoatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BoatsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OfficesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OfficesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Boat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Boat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Office.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Office.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_22_221158_create_offices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_22_221158_create_offices_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FollowButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/boats.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/boats/boats.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/cars.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/cars/cars.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/cars_show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/offices/office_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/offices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/offices/offices.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +210,7 @@
       <workItem from="1613596089471" duration="2319000" />
       <workItem from="1614079788087" duration="405000" />
       <workItem from="1614080231806" duration="9517000" />
-      <workItem from="1614328518473" duration="22399000" />
+      <workItem from="1614328518473" duration="31230000" />
     </task>
     <servers />
   </component>
