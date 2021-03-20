@@ -8,9 +8,15 @@
 
             <div class="row">
                 <div class="col-8 offset-2">
-                    <div class="row"><h2>Edit Profile</h2></div>
+                    <div class="row">
+                        <h2>
+                            Edit Profile
+                        </h2>
+                    </div>
                     <div class="form-group row">
-                        <label for="introduction" class="col-md-4 col-form-label text-md-left">Introduction</label>
+                        <label for="introduction" class="col-md-4 col-form-label">
+                            Introduction
+                        </label>
                         <input id="introduction"
                                type="text"
                                class="form-control @error('introduction') is-invalid @enderror"
@@ -25,7 +31,9 @@
                         @enderror
                     </div>
                     <div class="form-group row">
-                        <label for="url" class="col-md-4 col-form-label text-md-left">Any link where we can find u</label>
+                        <label for="url" class="col-md-4 col-form-label">
+                            Any link where we can find u
+                        </label>
                         <input id="url"
                                type="text"
                                class="form-control @error('url') is-invalid @enderror"
@@ -40,19 +48,32 @@
                         @enderror
                     </div>
 
-                    <div class="row">
-                        <label for="image" class="col-mod-4 col-form-label">Profile Image</label>
-                        <input type="file" class="form-control-file" id="image" name="image">
-
-                        @error('image')
-                        <strong>{{ $message }}</strong>
+                    <div class="form-group row">
+                        <label for="phone" class="col-md-4 col-form-label">Phone</label>
+                        <input id="phone"
+                               type="text"
+                               class="form-control @error('phone') is-invalid @enderror"
+                               name="phone"
+                               value="{{$user->profile->phone ?? old('url') }}"
+                               autocomplete="phone" autofocus>
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
-                    <div class="row pt-4">
-                        <button class="btn btn-primary">Save</button>
-                    </div>
+                <div class="form-group row">
+                    <label for="image" class="col-mod-4 col-form-label">Profile Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image">
+                    @error('image')
+                    <strong>{{ $message }}</strong>
+                    @enderror
+                </div>
+                <div class="row pt-4">
+                    <button class="btn btn-primary">Save</button>
                 </div>
             </div>
         </form>
     </div>
 @endsection
+

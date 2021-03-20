@@ -102,6 +102,7 @@
                         <label for="boat_deposit" class="col-md-4 col-form-label text-md-left">boat_deposit</label>
                         <input id="boat_deposit"
                                type="number" step="1"
+                               min="0"
                                class="form-control @error('Cost') is-invalid @enderror"
                                name="boat_deposit"
                                value="{{old('boat_deposit') }}"

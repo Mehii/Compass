@@ -60,11 +60,15 @@ class BoatsController extends Controller
     }
     public function edit(Boat $boat)
     {
+        $this->authorize('update',$user->profile);
+
         return view('user_offers.boats.boats_edit',compact('boat'));
     }
 
     public function update(int $boat)
     {
+        $this->authorize('update',$user->profile);
+
         $item=Boat::findOrFail($boat);
 
         $data=request()->validate([

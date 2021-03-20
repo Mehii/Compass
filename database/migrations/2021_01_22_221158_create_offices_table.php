@@ -19,24 +19,43 @@ class CreateOfficesTable extends Migration
 
             #region geographical details
             $table->text('name_of_the_city');
-   //         $table->text('geographical_coordinate');
+            $table->text('street');
+//          $table->text('type_of_property');
+//          $table->text('geographical_coordinate');
             #endregion
 
-            #region details of the office
-            $table->text('furniture'); //no,half,full
-            $table->integer('building_floor');//10
-            $table->integer('floor');//4
-            $table->integer('number_of_rooms');//2
-            $table->double('square_meter');//64.3
+          #region details of the office
+            $table->integer('square_meter');
+            $table->integer('building_floor');
+            $table->integer('floor');
+            $table->text('furniture');
             #endregion
 
-            #region  image && cost && deposit
-            $table->string('office_image');
-            $table->double('office_cost_of_renting');
-            $table->double('office_deposit');
-            #endregion
+            #region rooms
+           $table->integer('bathroom');
+           $table->integer('bedroom');
+           $table->integer('dining_room');
+           $table->integer('kitchen');
+           $table->integer('living_room');
+           $table->integer('toilet');
+           $table->integer('garage');
+           #endregion
+
+            #region extras
+           $table->integer('lift');
+           $table->integer('ac');
+           $table->integer('washing_machine');
+           $table->integer('sea_view');
+           $table->integer('heating');
+           #endregion
+
+           #region  image && cost && deposit
+
+           $table->double('office_cost_of_renting');
+           $table->double('office_deposit');
+           $table->string('office_image');
+           #endregion
             $table->timestamps();
-
             $table->index('user_id');
         });
     }

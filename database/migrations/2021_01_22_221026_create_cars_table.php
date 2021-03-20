@@ -18,26 +18,32 @@ class CreateCarsTable extends Migration
             $table->unsignedBigInteger('user_id');
 
             #region type of the car
-            $table->text('where_can_u_get_it');
-            #endregion
-
-            #region exterior
-            $table->text('colour_of_car');
-            $table->integer('number_of_doors');
-            $table->boolean('automatic_windows');
+            $table->text('name_of_the_city');//
+            $table->text('type_of_it');
             #endregion
 
             #region interior
-            $table->text('car_manufacturer');
-            $table->text('type_of_gearbox');
-            $table->boolean('air_condition');
-            $table->boolean('abs');
+            $table->text('car_manufacturer');//
+            $table->text('type_of_gearbox');//
+            $table->text('colour_of_car');
             #endregion
 
+            #region exterior
+            $table->integer('number_of_doors');
+            $table->integer('automatic_windows');
+            #endregion
+            $table->integer('alarm');
+            $table->integer('bluetooth');
+            $table->integer('dashcam');
+            $table->integer('back_radar');
+            $table->integer('air_condition');
+            $table->integer('abs');
+
             #region  image && cost && deposit
+
+            $table->integer('car_cost_of_renting');
+            $table->integer('car_deposit');
             $table->string('car_image');
-            $table->double('car_cost_of_renting');
-            $table->double('car_deposit');
             #endregion
             $table->timestamps();
 

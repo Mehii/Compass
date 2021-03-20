@@ -1,0 +1,20 @@
+{
+  "name": "compass",
+  "description": "empty",
+  "main": "webpack.mix.js",
+  "authors": [
+    "Henrik Horvath"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Mehii/Compass",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+        "select2": "~4.0"
+    }
+}

@@ -1,143 +1,399 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <form action="/myprofile/items/office/{{$office->id}}" enctype="multipart/form-data" method="POST">
+    <div class="section">
+        <div class="publish">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Edit your post</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <form action="/myprofile/items/office/{{$office->id}}" enctype="multipart/form-data" method="POST" id="name_of_the_city">
             @csrf
             @method('PATCH')
 
-            <div class="row">
-                <div class="col-md-6 offset-2">
-                    <div class="row"><h2>Details of the office</h2></div>
-                    <div class="form-group row">
-                        <label for="name_of_the_city" class="col-md-4 col-form-label text-md-left">City</label>
-                        <input id="name_of_the_city"
-                               type="text"
-                               class="form-control @error('name_of_the_city') is-invalid @enderror"
-                               name="name_of_the_city"
-                               value="{{$office->name_of_the_city}}"
-                               autocomplete="Valletta" autofocus>
-
-                        @error('name_of_the_city')
-                        <span class="invalid-feedback" role="alert">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Location</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form">
+                        <div class="col-xs-12 col-md-4 col-xl-4">
+                            <label for="name_of_the_city">City</label>
+                            <div class="form-group" style="width: 300px">
+                                <select class="city_choose" name="name_of_the_city" form="name_of_the_city" id="name_of_the_city"  style="width: 150px">
+                                    <option value="Birgu">Birgu</option>
+                                    <option value="Mdina">Mdina</option>
+                                    <option value="Qormi">Qormi</option>
+                                    <option value="Senglea">Senglea</option>
+                                    <option value="Siġġiewi">Siġġiewi</option>
+                                    <option value="Valletta">Valletta</option>
+                                    <option value="Żebbuġ">Żebbuġ</option>
+                                    <option value="Żejtun">Żejtun</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <label for="street">Street</label>
+                        <div class="form-group" style="width: 200px">
+                            <input id="street"
+                                   type="text"
+                                   class="form-control @error('street') is-invalid @enderror"
+                                   name="street"
+                                   value="{{$office->street}}"
+                                   autocomplete="">
+                            @error('street')
+                            <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror
+                            @enderror
+                        </div>
                     </div>
+{{--                    <div class="form">--}}
+{{--                        <div class="col-xs-12 col-md-4 col-xl-4">--}}
+{{--                            <label for="type_of_property">Property</label>--}}
+{{--                            <div class="form-group" style="width: 300px">--}}
+{{--                                <select class="property" name="type_of_property" form="type_of_property" id="type_of_property"  style="width: 150px">--}}
+{{--                                    <option value="Apartment">Apartment</option>--}}
+{{--                                    <option value="Penthouse">Penthouse</option>--}}
+{{--                                    <option value="Office">Office</option>--}}
+{{--                                    <option value="Villa">Villa</option>--}}
+{{--                                    <option value="Apartment block">Apartment block</option>--}}
+{{--                                    <option value="Bungalow">Bungalow</option>--}}
+{{--                                    <option value="Restaurant">Restaurant</option>--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                </div>
+            </div>
 
-                    <div class="form-group row">
-                        <label for="furniture" class="col-md-4 col-form-label text-md-left">Furniture</label>
-                        <select id="furniture" name="furniture" class="form-control">
-                            <option value="Furnished">Furnished</option>
-                            <option value="Half-furnished">Half-furnished</option>
-                            <option value="No furnished">No furnished</option>
-                        </select>
-
-                        @error('furniture')
-                        <span class="invalid-feedback" role="alert">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Details</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <label for="square_meter">Square meter</label>
+                        <div class="form-group" style="width: 100px">
+                            <input id="square_meter"
+                                   type="number" step="1"
+                                   class="form-control @error('square_meter') is-invalid @enderror"
+                                   name="square_meter"
+                                   value="{{$office->square_meter}}"
+                                   autocomplete="">
+                            @error('square_meter')
+                            <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror
+                            @enderror
+                        </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="building_floor" class="col-md-4 col-form-label text-md-left">Building floor</label>
-                        <input id="building_floor"
-                               type="number"
-                               class="form-control @error('building_floor') is-invalid @enderror"
-                               name="building_floor"
-                               value="{{$office->building_floor}}"
-                               autocomplete="">
-
-                        @error('building_floor')
-                        <span class="invalid-feedback" role="alert">
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <label for="building_floor">Block of</label>
+                        <div class="form-group" style="width: 100px">
+                            <input id="building_floor"
+                                   type="number" step="1"
+                                   min="0" max="20"
+                                   class="form-control @error('building_floor') is-invalid @enderror"
+                                   name="building_floor"
+                                   value="{{$office->building_floor}}"
+                                   autocomplete="">
+                            @error('building_floor')
+                            <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
-                        <label for="floor" class="col-md-4 col-form-label text-md-left">Floor</label>
-                        <input id="floor"
-                               type="number"
-                               class="form-control @error('floor') is-invalid @enderror"
-                               name="floor"
-                               value="{{$office->floor}}"
-                               autocomplete="0">
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="floor">Floor</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="floor"
+                                               type="number"
+                                               class="form-control @error('floor') is-invalid @enderror"
+                                               name="floor"
+                                               value="{{$office->floor}}"
+                                               autocomplete="0">
+                                        @error('floor')
+                                        <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="furniture" class="col-md-4 col-form-label text-md-left">Furniture</label>
+                                    <div class="form-group">
+                                        <select id="furniture" name="furniture" class="form-control">
+                                            <option value="Furnished">Furnished</option>
+                                            <option value="Half-furnished">Half-furnished</option>
+                                            <option value="No furnished">No furnished</option>
+                                        </select>
+                                        @error('furniture')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        @error('floor')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
-                        <label for="number_of_rooms" class="col-md-4 col-form-label text-md-left">Number of rooms</label>
-                        <input id="number_of_rooms"
-                               type="number"
-                               class="form-control @error('number_of_rooms') is-invalid @enderror"
-                               name="number_of_rooms"
-                               value="{{$office->number_of_rooms}}"
-                               autocomplete="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>
+                                        Details of the property
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="bathroom">Bathroom</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="bathroom"
+                                               type="number" step="1"
+                                               class="form-control @error('bathroom') is-invalid @enderror"
+                                               name="bathroom"
+                                               value="{{$office->bathroom}}"
+                                               autocomplete="bathroom">
 
-                        @error('number_of_rooms')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
-                        <label for="square_meter" class="col-md-4 col-form-label text-md-left">Square meters</label>
-                        <input id="square_meter"
-                               type="number" step="0.1"
-                               class="form-control @error('square_meter') is-invalid @enderror"
-                               name="square_meter"
-                               value="{{$office->square_meter}}"
-                               autocomplete="">
+                                        @error('bathroom')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
 
-                        @error('square_meter')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
-                        <label for="office_cost_of_renting" class="col-md-4 col-form-label text-md-left">Cost</label>
-                        <input id="office_cost_of_renting"
-                               type="number" step="1"
-                               class="form-control @error('office_cost_of_renting') is-invalid @enderror"
-                               name="office_cost_of_renting"
-                               value="{{$office->office_cost_of_renting}}"
-                               autocomplete="office_cost_of_renting">
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="bedroom">Bedroom</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="bedroom"
+                                               type="number" step="1"
+                                               class="form-control @error('bedroom') is-invalid @enderror"
+                                               name="bedroom"
+                                               value="{{$office->bedroom}}"
+                                               autocomplete="bedroom">
 
-                        @error('office_cost_of_renting')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
-                        <label for="office_deposit" class="col-md-4 col-form-label text-md-left">Deposit</label>
-                        <input id="office_deposit"
-                               type="number" step="1"
-                               class="form-control @error('office_deposit') is-invalid @enderror"
-                               name="office_deposit"
-                               value="{{$office->office_deposit}}">
+                                        @error('bedroom')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
 
-                        @error('office_deposit')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
-                        <label for="office_image" class="col-mod-4 col-form-label">Image</label>
-                        <input type="file" class="form-control-file" id="office_image" name="office_image">
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="dining_room">Dining-Room</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="dining_room"
+                                               type="number" step="1"
+                                               class="form-control @error('dining_room') is-invalid @enderror"
+                                               name="dining_room"
+                                               value="{{$office->dining_room}}"
+                                               autocomplete="dining_room">
 
-                        @error('office_image')
-                        <strong>{{ $message }}</strong>
-                        @enderror
+                                        @error('dining_room')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="kitchen">Kitchen</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="kitchen"
+                                               type="number" step="1"
+                                               class="form-control @error('kitchen') is-invalid @enderror"
+                                               name="kitchen"
+                                               value="{{$office->kitchen}}"
+                                               autocomplete="kitchen">
+
+                                        @error('kitchen')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="living_room">Living room</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="living_room"
+                                               type="number" step="1"
+                                               class="form-control @error('living_room') is-invalid @enderror"
+                                               name="living_room"
+                                               value="{{$office->living_room}}"
+                                               autocomplete="living_room">
+
+                                        @error('living_room')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="toilet">Toilet</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="toilet"
+                                               type="number" step="1"
+                                               class="form-control @error('toilet') is-invalid @enderror"
+                                               name="toilet"
+                                               value="{{$office->toilet}}"
+                                               autocomplete="toilet">
+
+                                        @error('toilet')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="garage">Garage</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input type='radio'
+                                               id="garage"
+                                               name="garage" value="1"
+                                               autocomplete="0">
+                                        @error('garage')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Extras</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <div class="form-group" style="width: 100px">
+                                        <label for="lift">Lift</label>
+                                        <input type='radio' id="lift" name="lift" value="1" autocomplete="0">
+                                        @error('lift')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group" style="width: 100px">
+                                    <label for="ac">A/C</label>
+                                    <input type='radio' id="ac" name="ac" value="1" autocomplete="0">
+                                    @error('ac')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group" style="width: 100px">
+                                    <label for="washing_machine">Washing machine</label>
+                                    <input type='radio' id="washing_machine" name="washing_machine" value="1" autocomplete="0">
+                                    @error('washing_machine')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group" style="width: 100px">
+                                    <label for="sea_view">Sea view</label>
+                                    <input type='radio' id="washing_machine" name="sea_view" value="1" autocomplete="0">
+                                    @error('sea_view')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group" style="width: 100px">
+                                    <label for="heating">Heating</label>
+                                    <input type='radio' id="washing_machine" name="heating" value="1" autocomplete="0">
+                                    @error('heating')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Payments</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="office_cost_of_renting">Cost/Month</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="office_cost_of_renting"
+                                               type="number" step="50"
+                                               class="form-control @error('office_cost_of_renting') is-invalid @enderror"
+                                               name="office_cost_of_renting"
+                                               value="{{$office->office_cost_of_renting}}"
+                                               autocomplete="office_cost_of_renting">
+
+                                        @error('office_cost_of_renting')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-3 col-xl-2">
+                                    <label for="office_deposit">Deposit</label>
+                                    <div class="form-group" style="width: 100px">
+                                        <input id="office_deposit"
+                                               type="number" step="50"
+                                               class="form-control @error('office_deposit') is-invalid @enderror"
+                                               name="office_deposit"
+                                               value="{{$office->office_deposit}}">
+                                        @error('office_deposit')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="office_image" class="col-mod-4 col-form-label"><h2>Image</h2></label>
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="office_image" name="office_image" multiple>
+                            @error('office_image')
+                            <strong>{{ $message }}</strong>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="row pt-4">
-                        <button class="btn btn-primary">Save the changes</button>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary float-right">Edit your property details</button>
                     </div>
                 </div>
             </div>

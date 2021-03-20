@@ -12,18 +12,20 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-            <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                    Compass
                 </a>
@@ -34,7 +36,36 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @if (Auth::user())
+                            <li class="nav-item">
+                                <a class="nav-link" href="/myprofile/{{Auth::user()->id}}">{{ __('Profile') }}</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    @if (Auth::user())
+                                        {{ __('Share with us!') }}
+                                    @endif
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/myprofile/items/car/add_new_car">
+                                        @if (Auth::user())
+                                           New Car
+                                        @endif
+                                    </a>
+                                    <a class="dropdown-item" href="/myprofile/items/office/add_new_office">
+                                        @if (Auth::user())
+                                            New Office
+                                        @endif
+                                    </a>
+                                    <a class="dropdown-item" href="/myprofile/items/boat/add_new_boat">
+                                        @if (Auth::user())
+                                            New Boat
+                                        @endif
+                                    </a>
+                                </div>
 
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -50,9 +81,9 @@
                                 </li>
                             @endif
                         @else
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <!--{{ Auth::user()->name }} -->
                                     @if (Auth::user())
                                         Settings
                                     @endif
@@ -77,7 +108,7 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
+
             </div>
         </nav>
 
@@ -85,6 +116,12 @@
             @yield('content')
         </main>
     </div>
-
+    @yield('jquery')
+    <script src="{{ asset('js/select2.js') }}"defer></script>
+    <script src="{{ asset('js/radio.js') }}" defer></script>
+    <script src="{{ asset('js/select.js') }}"defer></script>
+    <script src="{{ asset('js/index_for.js') }}"defer></script>
+    <script src="{{ asset('js/modal.js') }}"defer></script>
+    @yield('javascript')
 </body>
 </html>

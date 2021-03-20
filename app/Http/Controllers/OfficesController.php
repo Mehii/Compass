@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
 use App\Models\Office;
 use Intervention\Image\Facades\Image;
 
@@ -22,31 +21,66 @@ class OfficesController extends Controller
         #region Validating  form fields
         $data=request()->validate([
             'name_of_the_city'=>'required',
-            'furniture'=>'required',
+            'street'=>'required',
+//          'type_of_property'=>'required',
+
+            'square_meter'=>'required',
             'building_floor'=>'',
             'floor'=>'required',
-            'number_of_rooms'=>'required',
-            'square_meter'=>'required',
+            'furniture'=>'required',
+
+            'bathroom'=>'required',
+            'bedroom'=>'required',
+            'dining_room'=>'required',
+            'kitchen'=>'required',
+            'living_room'=>'required',
+            'toilet'=>'required',
+            'garage'=>'required',
+
+
+            'lift'=>'',
+            'ac'=>'',
+            'washing_machine'=>'',
+            'sea_view'=>'',
+            'heating'=>'',
+
             'office_cost_of_renting'=>'required',
             'office_deposit'=>'required',
             'office_image'=>['required','image'],
         ]);
-        #endregion
 
+        #endregion
                 #region image resize
                 $Office_ImagePath = request('office_image')->store('uploads/offices', 'public');
-                $image = Image::make(public_path("storage/{$Office_ImagePath}"))->fit(1200, 1800);
+                $image = Image::make(public_path("storage/{$Office_ImagePath}"));
                 $image->save();
                 #endregion
 
                 #region storing
                 auth()->user()->offices()->create([
                     'name_of_the_city'=>$data['name_of_the_city'],
-                    'furniture'=>$data['furniture'],
+                    'street'=>$data['street'],
+//                   'type_of_property'=>$data['type_of_property'],
+
+                    'square_meter'=>$data['square_meter'],
                     'building_floor'=>$data['building_floor'],
                     'floor'=>$data['floor'],
-                    'number_of_rooms'=>$data['number_of_rooms'],
-                    'square_meter'=>$data['square_meter'],
+                    'furniture'=>$data['furniture'],
+
+                    'bathroom'=>$data['bathroom'],
+                    'bedroom'=>$data['bedroom'],
+                    'dining_room'=>$data['dining_room'],
+                    'kitchen'=>$data['kitchen'],
+                    'living_room'=>$data['living_room'],
+                    'toilet'=>$data['toilet'],
+                    'garage'=>$data['garage'],
+
+                    'lift'=>$data['lift'],
+                    'ac'=>$data['ac'],
+                    'washing_machine'=>$data['washing_machine'],
+                    'sea_view'=>$data['sea_view'],
+                    'heating'=>$data['heating'],
+
                     'office_cost_of_renting'=>$data['office_cost_of_renting'],
                     'office_deposit'=>$data['office_deposit'],
                     'office_image'=>$Office_ImagePath,
@@ -70,20 +104,41 @@ class OfficesController extends Controller
 
     public function edit(Office $office)
     {
+        $this->authorize('update',$office);
+
         return view('user_offers.offices.office_edit',compact('office'));
     }
 
     public function update(int $office)
     {
+
         $item=Office::findOrFail($office);
 
         $data = request()->validate([
-            'name_of_the_city' => 'required',
-            'furniture' => 'required',
-            'building_floor' => 'required',
-            'floor' => 'required',
-            'number_of_rooms' => 'required',
-            'square_meter' => 'required',
+            'name_of_the_city'=>'required',
+            'street'=>'required',
+//            'type_of_property'=>'required',
+
+            'square_meter'=>'required',
+            'building_floor'=>'',
+            'floor'=>'required',
+            'furniture'=>'required',
+
+            'bathroom'=>'required',
+            'bedroom'=>'required',
+            'dining_room'=>'required',
+            'kitchen'=>'required',
+            'living_room'=>'required',
+            'toilet'=>'required',
+            'garage'=>'required',
+
+
+            'lift'=>'',
+            'ac'=>'',
+            'washing_machine'=>'',
+            'sea_view'=>'',
+            'heating'=>'',
+
             'office_cost_of_renting' => 'required',
             'office_deposit' => 'required',
             'office_image' => ['', 'image'],
@@ -91,16 +146,12 @@ class OfficesController extends Controller
         if (request('image'))
         {
             $Office_picture = request('image')->store('uploads/offices', 'public');
-            $image = Image::make(public_path("storage/{$Office_picture}"))->fit(1000, 1000);
+            $image = Image::make(public_path("storage/{$Office_picture}"));
             $image->save();
             $image_array=['image'=>$Office_picture];
 
         }
-        /*auth()->user()->cars->update(array_merge(
 
-            $data,
-            $image_array ?? [],
-        ));*/
         $item->update($data);
         return redirect('/myprofile/items/office/'.$item->id);//>with('success','Your Post has been updated');;
     }
