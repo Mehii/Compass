@@ -40,11 +40,11 @@ class CreateCarsTable extends Migration
             $table->integer('abs');
 
             #region  image && cost && deposit
-
             $table->integer('car_cost_of_renting');
             $table->integer('car_deposit');
             $table->string('car_image');
             #endregion
+
             $table->timestamps();
 
             $table->index('user_id');

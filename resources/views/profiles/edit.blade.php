@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="/myprofile/{{$user->id}}" enctype="multipart/form-data" method="POST">
+        <form action="/en/myprofile/{{$user->id}}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PATCH')
 
@@ -10,12 +10,12 @@
                 <div class="col-8 offset-2">
                     <div class="row">
                         <h2>
-                            Edit Profile
+                            {{__('Edit Profile')}}
                         </h2>
                     </div>
                     <div class="form-group row">
                         <label for="introduction" class="col-md-4 col-form-label">
-                            Introduction
+                            {{__('Introduction')}}
                         </label>
                         <input id="introduction"
                                type="text"
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="url" class="col-md-4 col-form-label">
-                            Any link where we can find u
+                            {{__('Any link where we can find u')}}
                         </label>
                         <input id="url"
                                type="text"
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="phone" class="col-md-4 col-form-label">Phone</label>
+                        <label for="phone" class="col-md-4 col-form-label">{{__('Phone')}}</label>
                         <input id="phone"
                                type="text"
                                class="form-control @error('phone') is-invalid @enderror"
@@ -63,14 +63,14 @@
                         @enderror
                     </div>
                 <div class="form-group row">
-                    <label for="image" class="col-mod-4 col-form-label">Profile Image</label>
+                    <label for="image" class="col-mod-4 col-form-label">{{__('Profile Image')}}</label>
                     <input type="file" class="form-control-file" id="image" name="image">
                     @error('image')
                     <strong>{{ $message }}</strong>
                     @enderror
                 </div>
                 <div class="row pt-4">
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary">{{__('Save')}}</button>
                 </div>
             </div>
         </form>

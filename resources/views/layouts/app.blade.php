@@ -21,7 +21,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.css') }}" rel="stylesheet">
 
-
 </head>
 <body>
     <div id="app">
@@ -36,9 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+
                         @if (Auth::user())
                             <li class="nav-item">
-                                <a class="nav-link" href="/myprofile/{{Auth::user()->id}}">{{ __('Profile') }}</a>
+                                <a class="nav-link" href="/{{app()->getLocale()}}/myprofile/{{Auth::user()->id}}">{{ __('Profile') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -47,19 +47,19 @@
                                     @endif
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/myprofile/items/car/add_new_car">
+                                    <a class="dropdown-item" href="/{{app()->getLocale()}}/myprofile/items/car/add_new_car">
                                         @if (Auth::user())
-                                           New Car
+                                           {{__('New Car')}}
                                         @endif
                                     </a>
-                                    <a class="dropdown-item" href="/myprofile/items/office/add_new_office">
+                                    <a class="dropdown-item" href="/{{app()->getLocale()}}/myprofile/items/office/add_new_office">
                                         @if (Auth::user())
-                                            New Office
+                                            {{__('New Property')}}
                                         @endif
                                     </a>
-                                    <a class="dropdown-item" href="/myprofile/items/boat/add_new_boat">
+                                    <a class="dropdown-item" href="/{{app()->getLocale()}}/myprofile/items/boat/add_new_boat">
                                         @if (Auth::user())
-                                            New Boat
+                                            {{__('New Boat')}}
                                         @endif
                                     </a>
                                 </div>
@@ -67,41 +67,56 @@
                             </li>
                         @endif
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/en">EN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/hu">HU</a>
+                        </li>
+                        {{--                            <li class="nav-item">--}}
+                        {{--                                <a class="nav-item" href="{{ route(Route::currentRouteName(),'en') }}">--}}
+                        {{--                                    EN--}}
+                        {{--                                </a>--}}
+                        {{--                            </li>--}}
+                        {{--                            <li class="nav-item">--}}
+                        {{--                                <a class="nav-item" href="{{ route(Route::currentRouteName(),'hu') }}">--}}
+                        {{--                                    HU--}}
+                        {{--                                </a>--}}
+                        {{--                            </li>--}}
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login',app()->getLocale()) }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register',app()->getLocale()) }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (Auth::user())
-                                        Settings
+                                        {{__('Settings')}}
                                     @endif
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/myprofile/{{Auth::user()->id}}/edit">
+                                    <a class="dropdown-item" href="/{{app()->getLocale()}}/myprofile/{{Auth::user()->id}}/edit">
                                     @if (Auth::user())
-                                        Edit my profile
+                                        {{__('Edit my profile')}}
                                     @endif
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route('logout',app()->getLocale()) }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout',app()->getLocale()) }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -117,11 +132,11 @@
         </main>
     </div>
     @yield('jquery')
-    <script src="{{ asset('js/select2.js') }}"defer></script>
+    <script src="{{ asset('js/select2.js') }}" defer></script>
     <script src="{{ asset('js/radio.js') }}" defer></script>
-    <script src="{{ asset('js/select.js') }}"defer></script>
-    <script src="{{ asset('js/index_for.js') }}"defer></script>
-    <script src="{{ asset('js/modal.js') }}"defer></script>
+    <script src="{{ asset('js/select.js') }}" defer></script>
+    <script src="{{ asset('js/index_for.js') }}" defer></script>
+    <script src="{{ asset('js/modal.js') }}" defer></script>
     @yield('javascript')
 </body>
 </html>

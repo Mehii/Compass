@@ -5,24 +5,24 @@
         <div class="publish">
             <div class="row">
                 <div class="col-12">
-                    <h1>Publish your car</h1>
+                    <h1>{{__('Publish your vehicle')}}</h1>
                 </div>
             </div>
         </div>
     </div>
     <div class="section">
-        <form action="/myprofile/items/car" enctype="multipart/form-data" method="POST" id="name_of_the_city">
+        <form action="/en/myprofile/items/car" enctype="multipart/form-data" method="POST" id="name_of_the_city">
             @csrf
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Location</h2>
+                        <h2>{{__('Location')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form">
                         <div class="col-xs-12 col-md-4 col-xl-4">
-                            <label for="name_of_the_city">City</label>
+                            <label for="name_of_the_city">{{__('City')}}</label>
                             <div class="form-group" style="width: 300px">
                                 <select class="city_choose" name="name_of_the_city" form="name_of_the_city" id="name_of_the_city"  style="width: 150px">
                                     <option value="Birgu">Birgu</option>
@@ -44,38 +44,38 @@
                 <div class="row">
                     <div class="col-12">
                         <h2>
-                            Details of the car
+                            {{__('Details of the vehicle')}}
                         </h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-md-3 col-xl-2">
-                        <div class="col-xs-12 col-md-4 col-xl-4">
-                            <label for="type_of_it">City</label>
-                            <div class="form-group" style="width: 300px">
-                                <select class="car_type" name="type_of_it" form="type_of_it" id="type_of_it"  style="width: 150px">
-                                    <option value="Big">Big</option>
-                                    <option value="Small">Small</option>
-                                </select>
-                            </div>
-                        </div>
-{{--                        <label for="type_of_it">Type</label>--}}
-{{--                        <div class="form-group" style="width: 100px">--}}
-{{--                            <input id="type_of_it"--}}
-{{--                                   type="text"--}}
-{{--                                   class="form-control @error('type_of_it') is-invalid @enderror"--}}
-{{--                                   name="type_of_it"--}}
-{{--                                   value="{{ old('type_of_it') }}"--}}
-{{--                                   autocomplete="">--}}
-{{--                            @error('type_of_it')--}}
-{{--                            <span class="invalid-feedback" role="alert">--}}
-{{--                                <strong>{{ $message }}</strong>--}}
-{{--                            </span>--}}
-{{--                            @enderror--}}
+{{--                        <div class="col-xs-12 col-md-4 col-xl-4">--}}
+{{--                            <label for="type_of_it">City</label>--}}
+{{--                            <div class="form-group" style="width: 300px">--}}
+{{--                                <select class="car_type" name="type_of_it" form="type_of_it" id="type_of_it"  style="width: 150px">--}}
+{{--                                    <option value="Big">Big</option>--}}
+{{--                                    <option value="Small">Small</option>--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
 {{--                        </div>--}}
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <label for="type_of_it">{{__('Type')}}</label>
+                        <div class="form-group" style="width: 100px">
+                            <input id="type_of_it"
+                                   type="text"
+                                   class="form-control @error('type_of_it') is-invalid @enderror"
+                                   name="type_of_it"
+                                   value="{{ old('type_of_it') }}"
+                                   autocomplete="">
+                            @error('type_of_it')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="car_manufacturer">Car manufacturer</label>
+                        <label for="car_manufacturer">{{__('Vehicle manufacturer')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="car_manufacturer"
                                    type="text"
@@ -92,11 +92,11 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="type_of_gearbox">Gearbox</label>
+                        <label for="type_of_gearbox">{{__('Gearbox')}}</label>
                         <div class="form-group">
                             <select id="type_of_gearbox" name="type_of_gearbox" >
-                                <option value="Automatic">Automatic</option>
-                                <option value="Not_automatic">Not automatic</option>
+                                <option value="Automatic">{{__('Automatic')}}</option>
+                                <option value="Not_automatic">{{__('Not automatic')}}</option>
                             </select>
                             @error('type_of_gearbox')
                             <span class="invalid-feedback" role="alert">
@@ -107,7 +107,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="colour_of_car">Colour of the car</label>
+                        <label for="colour_of_car">{{__('Colour of the vehicle')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="colour_of_car"
                                    type="text"
@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="number_of_doors">Number of doors</label>
+                        <label for="number_of_doors">{{__('Number of doors')}}</label>
                         <div class="form-group" style="width: 100px">
                             <select id="number_of_doors" name="number_of_doors" class="form-control">
                                 <option value="3">3</option>
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="automatic_windows">Automatic windows</label>
+                        <label for="automatic_windows">{{__('Automatic windows')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input type='radio'
                                    id="automatic_windows"
@@ -160,12 +160,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Extras</h2>
+                        <h2>{{__('Extras')}}</h2>
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
-                            <label for="alarm">Alarm</label>
+                            <label for="alarm">{{__('Alarm')}}</label>
                             <input type='radio'
                                    id="alarm"
                                    name="alarm"
@@ -181,7 +181,7 @@
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
-                            <label for="bluetooth">Bluetooth</label>
+                            <label for="bluetooth">{{__('Bluetooth')}}</label>
                             <input type='radio'
                                    id="bluetooth"
                                    name="bluetooth"
@@ -197,7 +197,7 @@
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
-                            <label for="dashcam">Dashcam</label>
+                            <label for="dashcam">{{__('Dashcam')}}</label>
                             <input type='radio'
                                    id="dashcam"
                                    name="dashcam"
@@ -213,7 +213,7 @@
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
-                            <label for="back_radar">Backwards radar</label>
+                            <label for="back_radar">{{__('Backwards radar')}}</label>
                             <input type='radio'
                                    id="back_radar"
                                    name="back_radar" value="1"
@@ -226,13 +226,13 @@
                         </div>
                     </div>
 
+
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="air_condition">A/C</label>
                         <div class="form-group" style="width: 100px">
+                            <label for="air_condition">{{__('A/C')}}</label>
                             <input type='radio'
                                    id="air_condition"
-                                   name="air_condition"
-                                   value="1"
+                                   name="air_condition" value="1"
                                    autocomplete="">
                             @error('air_condition')
                             <span class="invalid-feedback" role="alert">
@@ -243,8 +243,8 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="abs">ABS</label>
                         <div class="form-group" style="width: 100px">
+                            <label for="abs">{{__('ABS')}}</label>
                             <input type='radio'
                                    id="abs"
                                    name="abs"
@@ -263,12 +263,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Payments</h2>
+                        <h2>{{__('Payments')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="car_cost_of_renting">Cost/Week</label>
+                        <label for="car_cost_of_renting">{{__('Cost/Week')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="car_cost_of_renting"
                                    type="number" step="50"
@@ -284,7 +284,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="car_deposit">Deposit</label>
+                        <label for="car_deposit">{{__('Deposit')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="car_deposit"
                                    type="number" step="50"
@@ -303,8 +303,8 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <label for="car_image" class="col-mod-4 col-form-label"><h2>Image</h2></label>
+                    <div class="col-12">
+                        <label for="car_image" class="col-mod-4 col-form-label"><h2>{{__('Image')}}</h2></label>
                         <div class="form-group">
                             <input type="file" class="form-control-file" id="car_image" name="car_image" multiple>
                             @error('car_image')
@@ -312,8 +312,10 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <button class="btn btn-primary float-right">Publish your car</button>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-primary">{{__('Publish your vehicle')}}</button>
                     </div>
                 </div>
             </div>

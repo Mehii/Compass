@@ -1,0 +1,108 @@
+{
+    "Profile": "Profil",
+    "Share with us!": "Oszd meg velünk!",
+    "Login": "Bejelentkezés",
+    "Register": "Regisztráció",
+    "Logout": "Kijelentkezés",
+    "Settings": "Beállítások",
+    "Edit my profile": "Profil beállítások változtatása",
+
+    "Follow": "Követés",
+    "Here you can find me": "További oldalak, ahol megtalálsz",
+    "More offer": "További ajánlatok",
+    "Edit your post": "Poszt adatainak változtatása",
+    "Edit my post": "Poszt adatainak változtatása",
+    "Delete": "Törlés",
+
+    "Vehicles": "Járművek",
+    "Boat": "Vizi járművek",
+
+    "Vehicle posted": "Közétett járművek",
+    "Property posted": "Közétett ingatlanok",
+    "Boat posted": "Közétett hajók",
+    "following": "Követem",
+    "follower": "Követő",
+
+    "Ref No": "Hiv szám",
+    "Square Meter": "Négyzetméter",
+    "Properties": "Ingatlanok",
+
+    "Doors": "Ajtók száma",
+
+
+
+    "Provider": "Tulajdonos",
+    "New Car": "Autó felvétele",
+    "New Property": "Ingatlan felvétele",
+    "New Boat": "Hajó felvétele",
+
+    "Edit Profile": "Profil változtatása",
+    "Introduction": "Bemutatkozás",
+    "Any link where we can find u": "Más fiókod linkje",
+    "Phone": "Telefonszám",
+    "Profile Image": "Profilkép",
+    "Save": "Változtaások mentése",
+
+    "Property For Rent": "Kiadó ingatlan",
+
+    "Rooms": "Szobák",
+    "Bathroom": "Fürdő",
+    "Bedroom": "Hálószoba",
+    "Dining room": "Étkező",
+    "Kitchen": "Konyha",
+    "Living room": "Nappali",
+    "Closet": "Mellékhelység",
+    "Garage": "Garázs",
+
+    "Extras": "Extrák",
+    "Lift": "Lift",
+    "A/C": "Légkondi",
+    "Washing machine": "Mosógatógép",
+    "Sea view": "Tengerre való rálátás",
+    "Heating": "Fűtés",
+
+    "Payments": "Költségek",
+    "Cost/Week": "Ár/Hét",
+    "Deposit": "Előleg",
+
+    "Discard": "Elvetés",
+    "Really wanna it?": "Tényleg szeretné törölni",
+    "Make appointment now": "Lefoglalom",
+
+    "Publish your property": "Ossza meg ingatlanát",
+    "Location": "Elhelyezkedés",
+    "City": "Város",
+    "Street": "Utca",
+    "Details": "Részletek",
+    "Block of building": "Épület szintje",
+    "Floor": "Emelet",
+    "Furniture": "Bútorozottság",
+    "Furnished": "Bútorozott",
+    "Half-furnished": "Fél-bútorozott",
+    "No furnished": "Nem bútorozott",
+    "Details of the property": "Ingatlan felszereltsége",
+    "Image": "Kép",
+    "Submit your property": "Ossza meg ingatlanát!",
+
+    "Details of the vehicle": "Jármű részletei",
+    "Type": "Jármű típusa",
+    "Vehicle manufacturer": "Jármű gyártója",
+    "Automatic": "Automata",
+    "Not automatic": "Kézi",
+    "Gearbox": "Sebváltó típusa",
+    "Colour of the vehicle": "Jármű színe",
+    "Number of doors": "Ajtók száma",
+    "Automatic windows": "Automata ablakok",
+    "Alarm": "Riasztó",
+    "Bluetooth": "Bluetooth",
+    "Dashcam": "Dashcam",
+    "Backwards radar": "Tolatóradar",
+    "ABS": "ABS",
+    "Publish your vehicle": "Ossza meg járművét!",
+
+
+    "Vehicle For Rent": "Bérelhető jármű",
+    "About the vehicle": "Járműről"
+
+
+}

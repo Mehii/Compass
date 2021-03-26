@@ -75,14 +75,12 @@ class CarsController extends Controller
             'car_deposit' => $data['car_deposit'],
             'car_image' => $Car_ImagePath,
         ]);
-
-        return redirect('/myprofile/' . auth()->user()->id);
         #endregion
 
+        return redirect('/en/myprofile/' . auth()->user()->id);
+
         //dd(request('car_image')->store('uploads/cars','public'));
-
     }
-
     /*public function show(int $id)
     {
         // lekérni az user_id-t
@@ -92,19 +90,21 @@ class CarsController extends Controller
             'car'=>$cars,
         ]);
     }*/
-    public function show(Car $car)
+
+    public function show(string $language,Car $car)
     {
         return view('user_offers.cars.cars_show',compact('car'));
     }
 
-    public function edit(Car $car)
+    public function edit(string $language,Car $car)
     {
         return view('user_offers.cars.cars_edit',compact('car'));
     }
 
-    public function update(Car $car)
+    public function update(string $language,Car $car)
     {
         $item=Car::findOrFail($car);
+
         $data = request()->validate([
             'name_of_the_city' => 'required',
             'type_of_it' => 'required',
@@ -144,15 +144,15 @@ class CarsController extends Controller
         ));*/
 
         $item->update($data);
-        return redirect('/myprofile/items/car/'.$item->id);
+
+        return redirect('/'.$language.'/myprofile/items/car/'.$item->id);
     }
 
-    public function destroy(int $car)
+    public function destroy(string $language,int $car)
     {
         $item=Car::findOrFail($car);
         $item->destroy($item);
         $item->delete();
-
-        return redirect('/myprofile/'.$item->user_id);
+        return redirect('/'.$language.'/myprofile/'.$item->user_id);
     }
 }

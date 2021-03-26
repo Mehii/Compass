@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Office;
+use http\Client\Request;
 use Intervention\Image\Facades\Image;
 
 class OfficesController extends Controller
@@ -12,10 +13,17 @@ class OfficesController extends Controller
         $this->middleware('auth');
     }
 
+//    public function index()
+//    {
+//
+//    }
+
+
     public function create()
     {
         return view('user_offers.offices.offices');
     }
+
     public function store()
     {
         #region Validating  form fields
@@ -48,46 +56,46 @@ class OfficesController extends Controller
             'office_deposit'=>'required',
             'office_image'=>['required','image'],
         ]);
-
         #endregion
-                #region image resize
-                $Office_ImagePath = request('office_image')->store('uploads/offices', 'public');
-                $image = Image::make(public_path("storage/{$Office_ImagePath}"));
-                $image->save();
-                #endregion
 
-                #region storing
-                auth()->user()->offices()->create([
-                    'name_of_the_city'=>$data['name_of_the_city'],
-                    'street'=>$data['street'],
-//                   'type_of_property'=>$data['type_of_property'],
+        #region image resize
+        $Office_ImagePath = request('office_image')->store('uploads/offices', 'public');
+        $image = Image::make(public_path("storage/{$Office_ImagePath}"));
+        $image->save();
+        #endregion
 
-                    'square_meter'=>$data['square_meter'],
-                    'building_floor'=>$data['building_floor'],
-                    'floor'=>$data['floor'],
-                    'furniture'=>$data['furniture'],
+        #region storing
+        auth()->user()->offices()->create([
+            'name_of_the_city'=>$data['name_of_the_city'],
+            'street'=>$data['street'],
+//          'type_of_property'=>$data['type_of_property'],
 
-                    'bathroom'=>$data['bathroom'],
-                    'bedroom'=>$data['bedroom'],
-                    'dining_room'=>$data['dining_room'],
-                    'kitchen'=>$data['kitchen'],
-                    'living_room'=>$data['living_room'],
-                    'toilet'=>$data['toilet'],
-                    'garage'=>$data['garage'],
+            'square_meter'=>$data['square_meter'],
+            'building_floor'=>$data['building_floor'],
+            'floor'=>$data['floor'],
+            'furniture'=>$data['furniture'],
 
-                    'lift'=>$data['lift'],
-                    'ac'=>$data['ac'],
-                    'washing_machine'=>$data['washing_machine'],
-                    'sea_view'=>$data['sea_view'],
-                    'heating'=>$data['heating'],
+            'bathroom'=>$data['bathroom'],
+            'bedroom'=>$data['bedroom'],
+            'dining_room'=>$data['dining_room'],
+            'kitchen'=>$data['kitchen'],
+            'living_room'=>$data['living_room'],
+            'toilet'=>$data['toilet'],
+            'garage'=>$data['garage'],
 
-                    'office_cost_of_renting'=>$data['office_cost_of_renting'],
-                    'office_deposit'=>$data['office_deposit'],
-                    'office_image'=>$Office_ImagePath,
-                ]);
-                #endregion
+            'lift'=>$data['lift'],
+            'ac'=>$data['ac'],
+            'washing_machine'=>$data['washing_machine'],
+            'sea_view'=>$data['sea_view'],
+            'heating'=>$data['heating'],
 
-       return redirect('/myprofile/' . auth()->user()->id);
+            'office_cost_of_renting'=>$data['office_cost_of_renting'],
+            'office_deposit'=>$data['office_deposit'],
+            'office_image'=>$Office_ImagePath,
+        ]);
+        #endregion
+
+        return redirect('/'.$language.'/myprofile/' . auth()->user()->id);
     }
     /* public function show(int $id)
      {
@@ -97,19 +105,19 @@ class OfficesController extends Controller
              'office'=>$office,
          ]);
     }*/
-    public function show(Office $office)
+    public function show(string $language,Office $office)
     {
         return view('user_offers.offices.office_show',compact('office'));
     }
 
-    public function edit(Office $office)
+    public function edit(string $language,Office $office)
     {
         $this->authorize('update',$office);
 
         return view('user_offers.offices.office_edit',compact('office'));
     }
 
-    public function update(int $office)
+    public function update(string $language,int $office)
     {
 
         $item=Office::findOrFail($office);
@@ -132,7 +140,6 @@ class OfficesController extends Controller
             'toilet'=>'required',
             'garage'=>'required',
 
-
             'lift'=>'',
             'ac'=>'',
             'washing_machine'=>'',
@@ -151,16 +158,14 @@ class OfficesController extends Controller
             $image_array=['image'=>$Office_picture];
 
         }
-
         $item->update($data);
-        return redirect('/myprofile/items/office/'.$item->id);//>with('success','Your Post has been updated');;
+        return redirect('/'.$language.'/myprofile/items/office/'.$item->id);//>with('success','Your Post has been updated');;
     }
-    public function destroy(int $office)
+    public function destroy(string $language,int $office)
     {
         $item=Office::findOrFail($office);
         $item->destroy($item);
         $item->delete();
-        return redirect('/myprofile/'.$item->user_id);
+        return redirect('/'.$language.'/myprofile/'.$item->user_id);
     }
-
 }

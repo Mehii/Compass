@@ -6,24 +6,24 @@
         <div class="publish">
             <div class="row">
                 <div class="col-12">
-                    <h1>Publish your property</h1>
+                    <h1>{{__('Publish your property')}}</h1>
                 </div>
             </div>
         </div>
     </div>
     <div class="section">
-        <form action="/myprofile/items/office" enctype="multipart/form-data" method="POST" id="name_of_the_city">
+        <form action="/en/myprofile/items/office" enctype="multipart/form-data" method="POST" id="name_of_the_city">
             @csrf
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Location</h2>
+                        <h2>{{__('Location')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form">
                         <div class="col-xs-12 col-md-4 col-xl-4">
-                            <label for="name_of_the_city">City</label>
+                            <label for="name_of_the_city">{{__('City')}}</label>
                             <div class="form-group" style="width: 300px">
                                 <select class="city_choose" name="name_of_the_city" form="name_of_the_city" id="name_of_the_city"  style="width: 150px">
                                     <option value="Birgu">Birgu</option>
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-4 col-xl-4">
-                        <label for="street">Street</label>
+                        <label for="street">{{__('Street')}}</label>
                         <div class="form-group" style="width: 200px">
                             <input id="street"
                                    type="text"
@@ -77,12 +77,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Details</h2>
+                        <h2>{{__('Details')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="square_meter">Square meter</label>
+                        <label for="square_meter">{{__('Square Meter')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="square_meter"
                                    type="number" step="1"
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="building_floor">Block of</label>
+                        <label for="building_floor">{{__('Block of building')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="building_floor"
                                    type="number" step="1"
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="floor">Floor</label>
+                        <label for="floor">{{__('Floor')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="floor"
                                    type="number"
@@ -133,12 +133,12 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="furniture" class="col-md-4 col-form-label text-md-left">Furniture</label>
+                        <label for="furniture" class="col-md-4 col-form-label text-md-left">{{__('Furniture')}}</label>
                         <div class="form-group">
                             <select id="furniture" name="furniture" class="form-control">
-                                <option value="Furnished">Furnished</option>
-                                <option value="Half-furnished">Half-furnished</option>
-                                <option value="No furnished">No furnished</option>
+                                <option value="Furnished">{{__('Furnished')}}</option>
+                                <option value="Half-furnished">{{__('Half-furnished')}}</option>
+                                <option value="No furnished">{{__('No furnished')}}</option>
                             </select>
                             @error('furniture')
                             <span class="invalid-feedback" role="alert">
@@ -154,13 +154,13 @@
                 <div class="row">
                     <div class="col-12">
                         <h2>
-                            Details of the property
+                            {{__('Details of the property')}}
                         </h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="bathroom">Bathroom</label>
+                        <label for="bathroom">{{__('Bathroom')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="bathroom"
                                    type="number" step="1"
@@ -178,7 +178,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="bedroom">Bedroom</label>
+                        <label for="bedroom">{{__('Bedroom')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="bedroom"
                                    type="number" step="1"
@@ -196,7 +196,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="dining_room">Dining-Room</label>
+                        <label for="dining_room">{{__('Dining room')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="dining_room"
                                    type="number" step="1"
@@ -214,13 +214,13 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="kitchen">Kitchen</label>
+                        <label for="kitchen">{{__('Kitchen')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="kitchen"
                                    type="number" step="1"
                                    class="form-control @error('kitchen') is-invalid @enderror"
                                    name="kitchen"
-                                   value="{{ old('kitchen') }}"
+                                   value="{{ old('Kitchen') }}"
                                    autocomplete="kitchen">
 
                             @error('kitchen')
@@ -232,7 +232,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="living_room">Living room</label>
+                        <label for="living_room">{{__('Living room')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="living_room"
                                    type="number" step="1"
@@ -248,9 +248,8 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="toilet">Toilet</label>
+                        <label for="toilet">{{__('Closet')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="toilet"
                                    type="number" step="1"
@@ -266,33 +265,86 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="garage">Garage</label>
-                        <div class="form-group" style="width: 100px">
-                            <input type='radio'
-                                   id="garage"
-                                   name="garage" value="1"
-                                   autocomplete="0">
-                            @error('garage')
-                            <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                            @enderror
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Extras</h2>
+                        <h2>{{__('Extras')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
-                            <label for="lift">Lift</label>
+                            <label for="garage">{{__('Garage')}}</label>
+                            <input type='radio'
+                                   id="garage"
+                                   name="garage" value="1"
+                                   autocomplete="0">
+                            @error('garage')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <div class="form-group" style="width: 200px">
+                            <label for="sea_view">{{__('Sea view')}}</label>
+                            <input type='radio'
+                                   id="washing_machine"
+                                   name="sea_view"
+                                   value="1"
+                                   autocomplete="0">
+                            @error('sea_view')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <div class="form-group" style="width: 100px">
+                            <label for="ac">{{__('A/C')}}</label>
+                            <input type='radio' id="ac" name="ac" value="1">
+                            @error('ac')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <div class="form-group" style="width: 150px">
+                            <label for="washing_machine">{{__('Washing machine')}}</label>
+                            <input type='radio'
+                                   id="washing_machine"
+                                   name="washing_machine"
+                                   value="1"
+                                   autocomplete="">
+                            @error('washing_machine')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <div class="form-group" style="width: 100px">
+                            <label for="heating">{{__('Heating')}}</label>
+                            <input type='radio' id="washing_machine" name="heating" value="1" autocomplete="0">
+                            @error('heating')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-xl-2">
+                        <div class="form-group" style="width: 100px">
+                            <label for="lift">{{__('Lift')}}</label>
                             <input type='radio' id="lift" name="lift" value="1" autocomplete="0">
                             @error('lift')
                             <span class="invalid-feedback" role="alert">
@@ -301,54 +353,18 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group" style="width: 100px">
-                        <label for="ac">A/C</label>
-                        <input type='radio' id="ac" name="ac" value="1">
-                        @error('ac')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="form-group" style="width: 100px">
-                        <label for="washing_machine">Washing machine</label>
-                        <input type='radio' id="washing_machine" name="washing_machine" value="1" autocomplete="0">
-                        @error('washing_machine')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                    <div class="form-group" style="width: 100px">
-                        <label for="sea_view">Sea view</label>
-                        <input type='radio' id="washing_machine" name="sea_view" value="1" autocomplete="0">
-                        @error('sea_view')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                    <div class="form-group" style="width: 100px">
-                        <label for="heating">Heating</label>
-                        <input type='radio' id="washing_machine" name="heating" value="1" autocomplete="0">
-                        @error('heating')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
                 </div>
             </div>
 
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Payments</h2>
+                        <h2>{{__('Payments')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="office_cost_of_renting">Cost/Month</label>
+                        <label for="office_cost_of_renting">{{__('Cost/Week')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="office_cost_of_renting"
                                    type="number" step="50"
@@ -365,7 +381,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="office_deposit">Deposit</label>
+                        <label for="office_deposit">{{__('Deposit')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="office_deposit"
                                    type="number" step="50"
@@ -385,7 +401,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="office_image" class="col-mod-4 col-form-label"><h2>Image</h2></label>
+                        <label for="office_image" class="col-mod-4 col-form-label"><h2>{{__('Image')}}</h2></label>
                         <div class="form-group">
                             <input type="file" class="form-control-file" id="office_image" name="office_image" multiple>
                             @error('office_image')
@@ -393,9 +409,10 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <button class="btn btn-primary float-right">Submit your property</button>
-                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary align-bottom">{{__('Submit your property')}}</button>
                 </div>
             </div>
         </form>

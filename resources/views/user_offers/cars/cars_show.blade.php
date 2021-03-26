@@ -6,11 +6,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="col-12">
-                        <h1>Property For Rent</h1>
+                        <h1>{{__('Vehicle For Rent')}}</h1>
                     </div>
                     <div class="col-12">
-                        {{$car->where_can_u_get_it}}
-                        {{$car->car_cost_of_renting}}M<sup>2</sup>
+{{--                        {{$car->where_can_u_get_it}}--}}
+{{--                        {{$car->car_cost_of_renting}}M<sup>2</sup>--}}
                     </div>
                 </div>
             </div>
@@ -25,11 +25,11 @@
                     </div>
                     <div class="float-right pt-5">
                         <a href="#">
-                            Follow
+                            {{__('Follow')}}
                         </a>
                     </div>
                     <div class="font-weight-bold">
-                        <a href="/myprofile/{{ $car->user_id}}">
+                        <a href="/en/myprofile/{{ $car->user_id}}">
                             <h2>{{$car->user->name}}</h2>
                         </a>
                     </div>
@@ -48,7 +48,7 @@
 
                     <div class="font-weight-bold pr-1">
                         <a href="{{ $car->user->profile->url }}">
-                            Here you can find me
+                            {{__('Here you can find me')}}
                         </a>
                     </div>
                     <div class="font-weight-bold pr-1">
@@ -56,29 +56,29 @@
                     </div>
                     <div>
                         <button class="btn btn-dark info_but" type="button">
-                            <a href="/myprofile/{{ $car->user_id}}">
-                                More offer
+                            <a href="/en/myprofile/{{ $car->user_id}}">
+                                {{__('More offer')}}
                             </a>
                         </button>
                     </div>
                     @if(Auth::user()->id==$car->user_id)
                         <div>
                             <button class="btn btn-dark info_but" type="button">
-                                <a href="/myprofile/items/car/{{$car->id}}/edit">
-                                    Edit your post
+                                <a href="/en/myprofile/items/car/{{$car->id}}/edit">
+                                    {{__('Edit your post')}}
                                 </a>
                             </button>
                         </div>
                         <div>
-                                <button class="btn btn-dark info_but" type="button" data-toggle="modal" data-target="#exampleModal">
-                                    Delete
-                                </button>
+                            <button class="btn btn-dark info_but" type="button" data-toggle="modal" data-target="#exampleModal">
+                                {{__('Delete')}}
+                            </button>
                         </div>
                     @else
 
                         <div>
                             <button class="btn btn-dark info_but" type="button">
-                                Make appointment now
+                                {{__('Make appointment now')}}
                             </button>
                         </div>
                     @endif
@@ -92,34 +92,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>About the car</h2>
+                    <h2>{{__('About the vehicle')}}</h2>
                 </div>
                 <div class="col-md-6 col-xl-2">
-                    Manufacturer
+                    {{__('Vehicle manufacturer')}}
                 </div>
                 <div class="col-md-6 col-xl-2">
                     {{  $car->car_manufacturer }}
                 </div>
                 <div class="col-md-6 col-xl-2">
-                    Number of doors
+                    {{__('Number of doors')}}
                 </div>
                 <div class="col-md-6 col-xl-2">
                     {{  $car->number_of_doors }}
                 </div>
                 <div class="col-md-6 col-xl-2">
-                    Colour:
+                    {{__('Colour of the vehicle')}}
                 </div>
                 <div class="col-md-6 col-xl-2">
                     {{  $car->colour_of_car }}
                 </div>
                 <div class="col-md-6 col-xl-2">
-                    Gearbox
+                    {{__('Gearbox')}}
                 </div>
                 <div class="col-md-6 col-xl-2">
                     {{  $car->type_of_gearbox }}
                 </div>
                 <div class="col-md-6 col-xl-2">
-                   ABS
+                    {{__('ABS')}}
                 </div>
                 <div class="col-md-6 col-xl-2">
                     {{ $car->abs }}
@@ -130,20 +130,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Extras</h2>
+                    <h2>{{__('Extras')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    Alarm: {{ $car->alarm }}
+                    {{__('Alarm')}}: {{ $car->alarm }}
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    Bluetooth:{{ $car->bluetooth}}
+                    {{__('Bluetooth')}}:{{ $car->bluetooth}}
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    DashCam: {{ $car->dashcam}}
+                    {{__('DashCam')}}: {{ $car->dashcam}}
                 </div>
 
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    Backward radar: {{ $car->back_radar}}
+                    {{__('Backwards radar')}}: {{ $car->back_radar}}
                 </div>
 
             </div>
@@ -152,13 +152,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Payments</h2>
+                    <h2>{{__('Payments')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    Cost:{{ $car->car_cost_of_renting}}
+                    {{__('Cost/Week')}}:{{ $car->car_cost_of_renting}}
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    Deposit: {{ $car->car_deposit }}
+                    {{__('Deposit')}}: {{ $car->car_deposit }}
                 </div>
             </div>
         </div>
@@ -167,21 +167,21 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Post delete</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{__('Delete')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Really wanna it?
+                    {{__('Really wanna it?')}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-                    <form action="/myprofile/items/car/{{$car->id}}" enctype="multipart/form-data" method="POST">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Discard')}}</button>
+                    <form action="/en/myprofile/items/car/{{$car->id}}" enctype="multipart/form-data" method="POST">
                         <button class="btn btn-danger" value="submit" type="submit">
                             @csrf
                             @method('DELETE')
-                            Delete
+                            {{__('Delete')}}
                         </button>
                     </form>
                 </div>

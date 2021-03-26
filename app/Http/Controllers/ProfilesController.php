@@ -3,29 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
-    public function index(User $user)
+    public function index(string $language,User $user)
     {
+
+        #region out of work
         //$user=User::find($user);//Casual find, doesnt throw 404 not found exceptionTP
         //dd($user);
         //$user=User::findOrFail($user); //If user not existing throw an 404 exception lvl2
+        #endregion
         $follows= (auth()->user()) ? auth()->user()->following->contains($user->id):false;
-
-
 
         return view('profiles.index', compact('user','follows'));
     }
 
-    public function edit(User $user)
+    public function edit(string $language,User $user)
     {
         $this->authorize('update',$user->profile);
 
         return view('profiles.edit',compact('user'));
     }
-    public function update(User $user)
+    public function update(string $language,User $user)
     {
         $this->authorize('update',$user->profile);
 
@@ -48,6 +50,6 @@ class ProfilesController extends Controller
             $image_array ?? [],
         ));
 
-        return redirect('/myprofile/' . auth()->user()->id)->with('success','Your profile has been updated');
+        return redirect('/'.$language.'/myprofile/' . auth()->user()->id);
     }
 }

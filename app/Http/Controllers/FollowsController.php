@@ -12,7 +12,7 @@ class FollowsController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(User $user)
+    public function store(string $language,User $user)
     {
         return auth()->user()->following()->toggle($user->profile);
     }
