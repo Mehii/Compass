@@ -13,31 +13,30 @@ class CreateBoatsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('boats', function (Blueprint $table) {
 
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
 
-            #region type of the boat
-            $table->text('where_can_u_get_it');
+            $table->text('name_of_the_city');
+            $table->text('street');
+
             $table->text('boat_type');
-            #endregion
-
-            #region exterior
-            $table->text('colour_of_boat');
-            #endregion
-
-            #region interior
             $table->text('boat_manufacturer');
-            // $table->text('type_of_gearbox');
-            $table->boolean('air_condition');
-            #endregion
+            $table->text('colour_of_boat');
 
-            #region  image && cost && deposit
+            $table->integer('rooms');
+            $table->text('survivability');
+
+            $table->integer('ac');
+            $table->integer('heating');
+            $table->integer('gps');
+            $table->integer('washing_machine');
+
+            $table->integer('boat_cost_of_renting');
+            $table->integer('boat_deposit');
             $table->string('boat_image');
-            $table->double('boat_cost_of_renting');
-            $table->double('boat_deposit');
-            #endregion
 
             $table->timestamps();
 

@@ -43,9 +43,6 @@ class CarsController extends Controller
             'car_image' => ['required', 'image'],
         ]);
         #endregion
-//
-//        // bejelentkezett user, aki rendelkezik postolási lehetőséggel tud createlni "postot"
-//
         #region image resize
         $Car_ImagePath = request('car_image')->store('uploads/cars', 'public');
         $image = Image::make(public_path("storage/{$Car_ImagePath}"));
@@ -126,6 +123,7 @@ class CarsController extends Controller
             'car_cost_of_renting' => 'required',
             'car_deposit' => 'required',
             'car_image' => ['', 'image'],
+
         ]);
 
 

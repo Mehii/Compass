@@ -28,29 +28,40 @@
                         {{ $user->email }}
                     </div>
                     <div>
-                        {{ $user->phone ?? 'Not filled'}}
+                        {{ $user->phone}}
                     </div>
                     <div>
                         <div class="pr-5">{{ $user->profile->introduction}}</div>
                     </div>
                     <div class="d-flex">
-                            <div class="pr-5"><strong>{{ $user->cars->count() }}</strong>{{__('Vehicle posted')}} </div>
-                            <div class="pr-5"><strong>{{ $user->offices->count() }}</strong>{{__('Property posted')}} </div>
-                            <div class="pr-5"><strong>{{ $user->boats->count() }}</strong>{{__('Boat posted')}} </div>
-                            <div class="pr-5"><strong>{{ $user->profile->followers->count() }}</strong>{{__('follower')}}</div>
-                            <div class="pr-5"><strong>{{ $user->following->count() }}</strong>{{__('following')}}</div>
+                            <div class="pr-5">{{__('Vehicle posted')}}: <strong>{{ $user->cars->count() }}</strong> </div>
+                            <div class="pr-5">{{__('Property posted')}}: <strong> {{ $user->offices->count() }}</strong></div>
+                            <div class="pr-5">{{__('Boat posted')}}: <strong>{{ $user->boats->count() }}</strong></div>
+                            <div class="pr-5">{{__('follower')}}: <strong>{{ $user->profile->followers->count() }}</strong></div>
+                            <div class="pr-5">{{__('following')}}: <strong> {{ $user->following->count() }}</strong></div>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-baseline">
+                        @if((Auth::user()->id)!=$user->id)
                         <div class="d-flex align-items-center pb-3">
                             <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
                         </div>
+                        @endif
 
-                        <!-- Main Page-n 3 choosable option-Car-Boat-Office -->
                         @can('update',$user->profile)
-                            <div class="col-3"><a href="/{{app()->getLocale()}}/myprofile/items/car/add_new_car">{{__('New Car')}}</a></div>
-                            <div class="col-3"><a href="/{{app()->getLocale()}}/myprofile/items/office/add_new_office">{{__('New Property')}}</a></div>
-                            <div class="col-3"><a href="/{{app()->getLocale()}}/myprofile/items/boat/add_new_boat">{{__('New Boat')}}</a></div><!-- choose from list which type && d-flex justify-content-between-->
+                            <div class="row pt-4">
+                                <div class="col-3">
+                                    <a href="/{{app()->getLocale()}}/myprofile/items/car/add_new_car">{{__('New Car')}}</a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="/{{app()->getLocale()}}/myprofile/items/office/add_new_office">{{__('New Property')}}
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="/{{app()->getLocale()}}/myprofile/items/boat/add_new_boat">{{__('New Boat')}}
+                                    </a>
+                                </div>
+                            </div>
                         @endcan
 
                     </div>
@@ -116,14 +127,14 @@
                 </div>
                 @foreach($user->boats as $boat)
                     <div class="col-md-4 pb-4">
-                        <a href="/{{app()->getLocale()}}/myprofile/items/office/{{$boat->id}}">
+                        <a href="/{{app()->getLocale()}}/myprofile/items/boat/{{$boat->id}}">
                             <div>
                                 <img src="/storage/{{ $boat->boat_image }}" class="w-75" alt="">
                             </div>
                             <div>
-{{--                                <h2>{{$boat->name_of_the_city}},{{$office->street}}</h2>--}}
-{{--                                <h5>Square Meter: {{$office->square_meter}}M<sup>2</sup></h5>--}}
-{{--                                <h5>Ref No:{{$office->id}}</h5>--}}
+                                <h2>{{$boat->name_of_the_city}},{{$boat->street}}</h2>
+                                <h5>{{__('Type of Ship')}}: {{$boat->type_of_boat}}M<sup>2</sup></h5>
+                                <h5>{{__('Ref No')}}:{{$boat->id}}</h5>
                             </div>
                         </a>
                     </div>
@@ -131,7 +142,6 @@
             </div>
         </div>
     </div>
-
 
 @endsection
 

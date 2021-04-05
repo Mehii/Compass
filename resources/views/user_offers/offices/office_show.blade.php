@@ -132,7 +132,11 @@
                     {{__('Garage')}}:
                 </div>
                 <div class="col-md-6 col-xl-2">
-                    {{  $office->garage }}
+                    @if(($office->garage)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
             </div>
         </div>
@@ -142,20 +146,45 @@
                     <h2>{{__('Extras')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Lift')}}: {{ $office->lift }}
+                    <b>{{__('Lift')}}:</b>
+                    @if(($office->lift)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('A/C')}}:{{ $office->ac}}
+                    <b>{{__('A/C')}}:</b>
+                    @if(($office->ac)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Washing machine')}}: {{ $office->washing_machine}}
+                    <b>{{__('Washing machine')}}:</b>
+                    @if(($office->washing_machine)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
 
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Sea view')}}: {{ $office->sea_view}}
+                    <b>{{__('Sea view')}}:</b>
+                    @if(($office->sea_view)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Heating')}}:  {{ $office->heating}}
+                    <b>{{__('Heating')}}:</b>
+                    @if(($office->heating)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
             </div>
         </div>
@@ -165,10 +194,10 @@
                     <h2>{{__('Payments')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Cost/Weak')}}:{{ $office->office_cost_of_renting}}
+                    {{__('Cost/Week')}}:{{ $office->office_cost_of_renting}} €
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Deposit')}}: {{ $office->office_deposit }}
+                    {{__('Deposit')}}: {{ $office->office_deposit }} €
                 </div>
 
             </div>
@@ -178,7 +207,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Post delete</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{__('Post delete')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -188,7 +217,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Discard')}}</button>
-                    <form action="/myprofile/items/office/{{$office->id}}" enctype="multipart/form-data" method="POST">
+                    <form action="/hu/myprofile/items/office/{{$office->id}}" enctype="multipart/form-data" method="POST">
                         <button class="btn btn-danger" value="submit" type="submit">
                             @csrf
                             @method('DELETE')

@@ -53,7 +53,7 @@ class BoatPolicy
      */
     public function update(User $user, Boat $boat)
     {
-
+        return $user->id==$boat->user_id;
     }
 
     /**

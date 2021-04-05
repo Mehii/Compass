@@ -55,22 +55,6 @@
                             @enderror
                         </div>
                     </div>
-{{--                    <div class="form">--}}
-{{--                        <div class="col-xs-12 col-md-4 col-xl-4">--}}
-{{--                            <label for="type_of_property">Property</label>--}}
-{{--                            <div class="form-group" style="width: 300px">--}}
-{{--                                <select class="property" name="type_of_property" form="type_of_property" id="type_of_property"  style="width: 150px">--}}
-{{--                                    <option value="Apartment">Apartment</option>--}}
-{{--                                    <option value="Penthouse">Penthouse</option>--}}
-{{--                                    <option value="Office">Office</option>--}}
-{{--                                    <option value="Villa">Villa</option>--}}
-{{--                                    <option value="Apartment block">Apartment block</option>--}}
-{{--                                    <option value="Bungalow">Bungalow</option>--}}
-{{--                                    <option value="Restaurant">Restaurant</option>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                 </div>
             </div>
 
@@ -86,10 +70,10 @@
                         <div class="form-group" style="width: 100px">
                             <input id="square_meter"
                                    type="number" step="1"
+                                   min="40" max="750"
                                    class="form-control @error('square_meter') is-invalid @enderror"
                                    name="square_meter"
-                                   value="{{ old('square_meter') }}"
-                                   autocomplete="">
+                                   value="{{ old('square_meter') }}">
                             @error('square_meter')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -105,9 +89,7 @@
                                    type="number" step="1"
                                    min="0" max="20"
                                    class="form-control @error('building_floor') is-invalid @enderror"
-                                   name="building_floor"
-                                   value="{{ old('building_floor') }}"
-                                   autocomplete="">
+                                   name="building_floor">
 
                             @error('building_floor')
                             <span class="invalid-feedback" role="alert">
@@ -123,8 +105,7 @@
                                    type="number"
                                    class="form-control @error('floor') is-invalid @enderror"
                                    name="floor"
-                                   value="{{ old('floor') }}"
-                                   autocomplete="0">
+                                   min="0" maxlength="20">
                             @error('floor')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -164,6 +145,7 @@
                         <div class="form-group" style="width: 100px">
                             <input id="bathroom"
                                    type="number" step="1"
+                                   min="0" max="4"
                                    class="form-control @error('bathroom') is-invalid @enderror"
                                    name="bathroom"
                                    value="{{ old('bathroom') }}"
@@ -182,6 +164,7 @@
                         <div class="form-group" style="width: 100px">
                             <input id="bedroom"
                                    type="number" step="1"
+                                   min="0" max="4"
                                    class="form-control @error('bedroom') is-invalid @enderror"
                                    name="bedroom"
                                    value="{{ old('bedroom') }}"
@@ -200,10 +183,9 @@
                         <div class="form-group" style="width: 100px">
                             <input id="dining_room"
                                    type="number" step="1"
+                                   min="0" max="4"
                                    class="form-control @error('dining_room') is-invalid @enderror"
-                                   name="dining_room"
-                                   value="{{ old('dining_room') }}"
-                                   autocomplete="dining_room">
+                                   name="dining_room">
 
                             @error('dining_room')
                             <span class="invalid-feedback" role="alert">
@@ -218,10 +200,9 @@
                         <div class="form-group" style="width: 100px">
                             <input id="kitchen"
                                    type="number" step="1"
+                                   min="0" max="4"
                                    class="form-control @error('kitchen') is-invalid @enderror"
-                                   name="kitchen"
-                                   value="{{ old('Kitchen') }}"
-                                   autocomplete="kitchen">
+                                   name="kitchen">
 
                             @error('kitchen')
                             <span class="invalid-feedback" role="alert">
@@ -236,6 +217,7 @@
                         <div class="form-group" style="width: 100px">
                             <input id="living_room"
                                    type="number" step="1"
+                                   min="0" max="4"
                                    class="form-control @error('living_room') is-invalid @enderror"
                                    name="living_room"
                                    value="{{ old('living_room') }}"
@@ -253,6 +235,7 @@
                         <div class="form-group" style="width: 100px">
                             <input id="toilet"
                                    type="number" step="1"
+                                   min="0" max="4"
                                    class="form-control @error('toilet') is-invalid @enderror"
                                    name="toilet"
                                    value="{{ old('toilet') }}"
@@ -279,7 +262,8 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="garage">{{__('Garage')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='garage'>
+                            <input type='checkbox'
                                    id="garage"
                                    name="garage" value="1"
                                    autocomplete="0">
@@ -293,11 +277,11 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 200px">
                             <label for="sea_view">{{__('Sea view')}}</label>
-                            <input type='radio'
-                                   id="washing_machine"
+                            <input type='hidden' value='0' name='sea_view'>
+                            <input type='checkbox'
+                                   id="sea_view"
                                    name="sea_view"
-                                   value="1"
-                                   autocomplete="0">
+                                   value="1">
                             @error('sea_view')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -308,7 +292,11 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="ac">{{__('A/C')}}</label>
-                            <input type='radio' id="ac" name="ac" value="1">
+                            <input type='hidden' value='0' name='ac'>
+                            <input type='checkbox'
+                                   id="ac"
+                                   name="ac"
+                                   value="1">
                             @error('ac')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -319,11 +307,11 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 150px">
                             <label for="washing_machine">{{__('Washing machine')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='washing_machine'>
+                            <input type='checkbox'
                                    id="washing_machine"
                                    name="washing_machine"
-                                   value="1"
-                                   autocomplete="">
+                                   value="1">
                             @error('washing_machine')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -334,7 +322,11 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="heating">{{__('Heating')}}</label>
-                            <input type='radio' id="washing_machine" name="heating" value="1" autocomplete="0">
+                            <input type='hidden' value='0' name='heating'>
+                            <input type='checkbox'
+                                   id="heating"
+                                   name="heating"
+                                   value="1">
                             @error('heating')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -345,7 +337,11 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="lift">{{__('Lift')}}</label>
-                            <input type='radio' id="lift" name="lift" value="1" autocomplete="0">
+                            <input type='hidden' value='0' name='lift'>
+                            <input type='checkbox'
+                                   id="lift"
+                                   name="lift"
+                                   value="1">
                             @error('lift')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

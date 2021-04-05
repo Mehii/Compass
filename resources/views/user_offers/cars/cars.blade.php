@@ -142,7 +142,7 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <label for="automatic_windows">{{__('Automatic windows')}}</label>
                         <div class="form-group" style="width: 100px">
-                            <input type='radio'
+                            <input type='checkbox'
                                    id="automatic_windows"
                                    name="automatic_windows"
                                    value="1"

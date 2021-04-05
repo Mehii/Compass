@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Office;
-use http\Client\Request;
 use Intervention\Image\Facades\Image;
 
 class OfficesController extends Controller
@@ -13,18 +12,19 @@ class OfficesController extends Controller
         $this->middleware('auth');
     }
 
-//    public function index()
+
+//    public function search(string $language,string $request)
 //    {
-//
+//        if ($request=='k'){
+//            return view('search_view.search');
+//        }
 //    }
-
-
     public function create()
     {
         return view('user_offers.offices.offices');
     }
 
-    public function store()
+    public function store(string $language)
     {
         #region Validating  form fields
         $data=request()->validate([
@@ -119,7 +119,6 @@ class OfficesController extends Controller
 
     public function update(string $language,int $office)
     {
-
         $item=Office::findOrFail($office);
 
         $data = request()->validate([
@@ -161,6 +160,7 @@ class OfficesController extends Controller
         $item->update($data);
         return redirect('/'.$language.'/myprofile/items/office/'.$item->id);//>with('success','Your Post has been updated');;
     }
+
     public function destroy(string $language,int $office)
     {
         $item=Office::findOrFail($office);

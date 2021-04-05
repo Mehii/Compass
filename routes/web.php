@@ -24,6 +24,9 @@ Route::group(['prefix'=>'{language}'],function (){
 
     #region all
 
+    #region search
+    Route::get('/search','App\Http\Controllers\OfficesController@search')->name('search');
+    #endregion
 
     #region follow
     Route::post('follow/{user}','App\Http\Controllers\FollowsController@store');

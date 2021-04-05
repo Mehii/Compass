@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+{{--        <div class="container">--}}
 {{--            <div class="row">--}}
 {{--                <div class="col-10">--}}
 {{--                    <div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
@@ -49,8 +49,11 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-      
-        </div>
+{{--            <form class="d-flex" action="{{route('search')}}"  method="GET">--}}
+{{--                <input class="form-control me-2" name="query" id="query" type="search" placeholder="Search" aria-label="Search">--}}
+{{--                <button class="btn btn-outline-success" type="submit">Search</button>--}}
+{{--            </form>--}}
+{{--        </div>--}}
     </div>
 
 @endsection
