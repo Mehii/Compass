@@ -38,7 +38,9 @@
 
                         @if (Auth::user())
                             <li class="nav-item">
-                                <a class="nav-link" href="/{{app()->getLocale()}}/myprofile/{{Auth::user()->id}}">{{ __('Profile') }}</a>
+                                <a class="nav-link" href="/{{app()->getLocale()}}/myprofile/{{Auth::user()->id}}">
+                                    {{ __('Profile') }}
+                                </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -125,6 +127,13 @@
             @yield('content')
         </main>
     </div>
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">
+            {{__('Made by: Henrik Horváth')}}<br>
+            <a href="https://github.com/Mehii/Compass">Github</a>
+        </div>
+    </footer>
+    <!-- Footer -->
     @yield('jquery')
     <script src="{{ asset('js/select2.js') }}" defer></script>
     <script src="{{ asset('js/radio.js') }}" defer></script>

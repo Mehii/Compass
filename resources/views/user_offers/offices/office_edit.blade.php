@@ -10,6 +10,7 @@
             </div>
         </div>
     </div>
+
     <div class="section">
         <form action="/{{app()->getLocale()}}/myprofile/items/office/{{$office->id}}" enctype="multipart/form-data" method="POST" id="name_of_the_city">
             @csrf

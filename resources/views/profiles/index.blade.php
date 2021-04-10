@@ -42,11 +42,15 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-baseline">
-                        @if((Auth::user()->id)!=$user->id)
-                        <div class="d-flex align-items-center pb-3">
-                            <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
-                        </div>
-                        @endif
+                        @guest()
+                        @else
+                            @if((Auth::user()->id)!=$user->id)
+                                <div class="d-flex align-items-center pb-3">
+                                    <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
+                                </div>
+                            @endif
+                        @endguest
+
 
                         @can('update',$user->profile)
                             <div class="row pt-4">
@@ -83,7 +87,7 @@
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/car/{{$car->id}}">
                             <div>
-                                <img src="/storage/{{ $car->car_image }}" class="w-75" alt="">
+                                <img src="/storage/{{ $car->car_image }}" class="w-75 kep" alt="">
                             </div>
                             <div>
                                 <h2>{{$car->name_of_the_city}},{{$car->car_manufacturer}}</h2>
@@ -106,7 +110,7 @@
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/office/{{$office->id}}">
                             <div>
-                                <img src="/storage/{{ $office->office_image }}" class="w-75" alt="">
+                                <img src="/storage/{{ $office->office_image }}" class=" kep" alt="">
                             </div>
                             <div>
                                 <h2>{{$office->name_of_the_city}},{{$office->street}}</h2>
@@ -129,7 +133,7 @@
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/boat/{{$boat->id}}">
                             <div>
-                                <img src="/storage/{{ $boat->boat_image }}" class="w-75" alt="">
+                                <img src="/storage/{{ $boat->boat_image }}" class="kep" alt="">
                             </div>
                             <div>
                                 <h2>{{$boat->name_of_the_city}},{{$boat->street}}</h2>

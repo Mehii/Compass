@@ -3,28 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="700e0a4b-cdf7-489f-a645-e4361d3b99d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BoatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BoatsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OfficesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OfficesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Boat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Boat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/BoatPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/BoatPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Office.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Office.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_22_221059_create_boats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_22_221059_create_boats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/radio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/hu.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/hu.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/boats/boat_show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/boats/boat_show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/boats/boats.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/boats/boats.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/boats/boats_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/boats/boats_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/cars/cars.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/cars/cars.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_offers/offices/office_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/offices/office_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/offices/office_show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/offices/office_show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_offers/offices/offices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_offers/offices/offices.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +173,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/search_view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -191,7 +182,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Bower" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -247,7 +238,17 @@
       <workItem from="1616672081434" duration="42764000" />
       <workItem from="1616840099580" duration="14000" />
       <workItem from="1617311610251" duration="13697000" />
-      <workItem from="1617624714935" duration="21721000" />
+      <workItem from="1617624714935" duration="24392000" />
+      <workItem from="1617722112093" duration="43000" />
+      <workItem from="1617722226827" duration="982000" />
+      <workItem from="1617728964573" duration="2717000" />
+      <workItem from="1617786832745" duration="671000" />
+      <workItem from="1617795523912" duration="1348000" />
+      <workItem from="1617800837620" duration="965000" />
+      <workItem from="1617820121349" duration="3514000" />
+      <workItem from="1617893621181" duration="2340000" />
+      <workItem from="1617958192505" duration="219000" />
+      <workItem from="1617958414352" duration="8551000" />
     </task>
     <servers />
   </component>

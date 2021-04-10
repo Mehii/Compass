@@ -12,7 +12,7 @@ class OfficesController extends Controller
         $this->middleware('auth');
     }
 
-
+    
 //    public function search(string $language,string $request)
 //    {
 //        if ($request=='k'){

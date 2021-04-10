@@ -38,7 +38,9 @@
                                type="text"
                                class="form-control @error('url') is-invalid @enderror"
                                name="url"
-                               value="{{$user->profile->url ?? old('url') }}"
+                               value="{{$user->profile->url}}"
+                               placeholder="https://example.com"
+                               pattern="https://*"
                                autocomplete="url" autofocus>
 
                         @error('url')
@@ -54,8 +56,10 @@
                                type="text"
                                class="form-control @error('phone') is-invalid @enderror"
                                name="phone"
-                               value="{{$user->profile->phone ?? old('url') }}"
-                               autocomplete="phone" autofocus>
+                               value="{{$user->profile->phone}}"
+                               autocomplete="phone" autofocus
+                               pattern="[0-9]"
+                        placeholder="00-00-000-0000">
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
