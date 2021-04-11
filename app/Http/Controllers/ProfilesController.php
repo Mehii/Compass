@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -10,12 +11,12 @@ class ProfilesController extends Controller
 {
     public function index(string $language,User $user)
     {
-
         #region out of work
         //$user=User::find($user);//Casual find, doesnt throw 404 not found exceptionTP
         //dd($user);
         //$user=User::findOrFail($user); //If user not existing throw an 404 exception lvl2
         #endregion
+
         $follows= (auth()->user()) ? auth()->user()->following->contains($user->id):false;
 
         return view('profiles.index', compact('user','follows'));
@@ -23,13 +24,20 @@ class ProfilesController extends Controller
 
     public function edit(string $language,User $user)
     {
-        $this->authorize('update',$user->profile);
+        try {
+            $this->authorize('update', $user->profile);
+        } catch (AuthorizationException $e) {
+        }
 
         return view('profiles.edit',compact('user'));
     }
+
     public function update(string $language,User $user)
     {
-        $this->authorize('update',$user->profile);
+        try {
+            $this->authorize('update', $user->profile);
+        } catch (AuthorizationException $e) {
+        }
 
         $data=request()->validate([
             'introduction'=>'required',

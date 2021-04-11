@@ -34,11 +34,11 @@
                         <div class="pr-5">{{ $user->profile->introduction}}</div>
                     </div>
                     <div class="d-flex">
-                            <div class="pr-5">{{__('Vehicle posted')}}: <strong>{{ $user->cars->count() }}</strong> </div>
-                            <div class="pr-5">{{__('Property posted')}}: <strong> {{ $user->offices->count() }}</strong></div>
-                            <div class="pr-5">{{__('Boat posted')}}: <strong>{{ $user->boats->count() }}</strong></div>
-                            <div class="pr-5">{{__('follower')}}: <strong>{{ $user->profile->followers->count() }}</strong></div>
-                            <div class="pr-5">{{__('following')}}: <strong> {{ $user->following->count() }}</strong></div>
+                        <div class="pr-5">{{__('Vehicle posted')}}: <strong>{{ $user->cars->count() }}</strong> </div>
+                        <div class="pr-5">{{__('Property posted')}}: <strong> {{ $user->offices->count() }}</strong></div>
+                        <div class="pr-5">{{__('Boat posted')}}: <strong>{{ $user->boats->count() }}</strong></div>
+                        <div class="pr-5">{{__('follower')}}: <strong>{{ $user->profile->followers->count() }}</strong></div>
+                        <div class="pr-5">{{__('following')}}: <strong> {{ $user->following->count() }}</strong></div>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-baseline">
@@ -110,7 +110,7 @@
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/office/{{$office->id}}">
                             <div>
-                                <img src="/storage/{{ $office->office_image }}" class=" kep" alt="">
+                                <img src="/storage/{{ $office->office_image }}" class="kep w-75" alt="">
                             </div>
                             <div>
                                 <h2>{{$office->name_of_the_city}},{{$office->street}}</h2>
@@ -133,7 +133,7 @@
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/boat/{{$boat->id}}">
                             <div>
-                                <img src="/storage/{{ $boat->boat_image }}" class="kep" alt="">
+                                <img src="/storage/{{ $boat->boat_image }}" class="kep w-75" alt="">
                             </div>
                             <div>
                                 <h2>{{$boat->name_of_the_city}},{{$boat->street}}</h2>

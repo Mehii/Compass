@@ -39,8 +39,7 @@
                                class="form-control @error('url') is-invalid @enderror"
                                name="url"
                                value="{{$user->profile->url}}"
-                               placeholder="https://example.com"
-                               pattern="https://*"
+                               placeholder="http://www.example.com"
                                autocomplete="url" autofocus>
 
                         @error('url')
@@ -66,16 +65,19 @@
                         </span>
                         @enderror
                     </div>
-                <div class="form-group row">
-                    <label for="image" class="col-mod-4 col-form-label">{{__('Profile Image')}}</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-                    @error('image')
-                    <strong>{{ $message }}</strong>
-                    @enderror
+                    <div class="form-group row">
+                        <label for="image" class="col-mod-4 col-form-label">{{__('Profile Image')}}</label>
+                        <input type="file" class="form-control-file" id="image" name="image">
+                        @error('image')
+                        <strong>{{ $message }}</strong>
+                        @enderror
+                    </div>
+
+                    <div class="row pt-4">
+                        <button class="btn btn-primary">{{__('Save')}}</button>
+                    </div>
                 </div>
-                <div class="row pt-4">
-                    <button class="btn btn-primary">{{__('Save')}}</button>
-                </div>
+
             </div>
         </form>
     </div>

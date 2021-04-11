@@ -36,14 +36,9 @@
 
                             <div class="col-md-6">
                                 <input id="phone"
-                                       type="tel"
+                                       type="number"
                                        class="form-control @error('phone') is-invalid @enderror"
-                                       name="phone" value="{{ old('phone') }}"
-                                       required autocomplete="phone"
-                                       pattern="[0-9]"
-                                       placeholder="00-00-000-0000"
-                                       autofocus>
-
+                                       name="number">
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -91,7 +86,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{__('Register') }}
                                 </button>
                             </div>
                         </div>

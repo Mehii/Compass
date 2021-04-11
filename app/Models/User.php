@@ -71,10 +71,10 @@ class User extends Authenticatable
     }
     public function boats(): HasMany
     {
-        return $this->hasMany(Boat::class)->orderBy('created_at','DESC');;
+        return $this->hasMany(Boat::class)->orderBy('created_at','DESC');
     }
     public function offices(): HasMany
     {
-        return $this->hasMany(Office::class)->orderBy('created_at','DESC');;
+        return $this->hasMany(Office::class)->orderBy('created_at','DESC');
     }
 }

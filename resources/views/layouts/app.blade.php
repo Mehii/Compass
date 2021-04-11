@@ -133,10 +133,9 @@
             <a href="https://github.com/Mehii/Compass">Github</a>
         </div>
     </footer>
-    <!-- Footer -->
+
     @yield('jquery')
     <script src="{{ asset('js/select2.js') }}" defer></script>
-    <script src="{{ asset('js/radio.js') }}" defer></script>
     <script src="{{ asset('js/select.js') }}" defer></script>
     <script src="{{ asset('js/index_for.js') }}" defer></script>
     <script src="{{ asset('js/modal.js') }}" defer></script>
