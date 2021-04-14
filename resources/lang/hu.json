@@ -5,6 +5,7 @@
     "Password": "Jelszó",
     "Confirm Password": "Jelszó megerősítése",
     "Remember Me": "Emlékezz Rám",
+    "Forgot Your Password?": "Elfelejtette jelszavát?",
 
     "Profile": "Profil",
     "Share with us!": "Oszd meg velünk!",
@@ -114,6 +115,7 @@
     "Available": "Elérhető",
     "Doesnt have": "Nem rendelkezik",
     "Boat Type": "Típusa",
+
     "Sail Boat": "Vitorlás",
     "Deck": "Fedélzetes",
     "Bowrider Boat": "Szörf szerű",
@@ -124,6 +126,8 @@
     "Suitable": "Nem csak partmenti",
     "Not-suitable": "Part közeli",
     "Boat-type": "Típusa",
+
+
 
     "Edit your boat details": "Megváltoztatom az adatokat",
     "Made by: Henrik Horváth": "Készítette: Horváth Henrik",

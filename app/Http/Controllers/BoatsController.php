@@ -12,6 +12,14 @@ class BoatsController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function index_boat(string $language){
+        $follow=auth()->user()->following()->pluck('profiles.user_id');
+
+        $boat_post=Boat::whereIn('user_id',$follow)->get();
+
+        return view('welcome')->with('boat_post',$boat_post);
+    }
     public function create()
     {
         return view('user_offers.boats.boats');

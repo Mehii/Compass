@@ -11,7 +11,6 @@ class Profile extends Model
 {
     protected $guarded=[];
 
-
     public function profileimage(): string
     {
         return ($this->image) ? '/storage/' .   $this->image : '/storage/uploads/profiles/K8fwNsjs5ISnbp28Ge49wjwME1nPMXcsyGhg0Ufi.png';
@@ -24,6 +23,6 @@ class Profile extends Model
 
     public function user():BelongsTo
     {
-        return $this->belongsTo(User::class); //Belongs to user
+        return $this->belongsTo(User::class);
     }
 }

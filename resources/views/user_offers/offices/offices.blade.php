@@ -368,7 +368,6 @@
                                    name="office_cost_of_renting"
                                    value="0"
                                    autocomplete="office_cost_of_renting">
-
                             @error('office_cost_of_renting')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

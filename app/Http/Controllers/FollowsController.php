@@ -14,6 +14,7 @@ class FollowsController extends Controller
 
     public function store(string $language,User $user)
     {
+//        return $user->name;
         return auth()->user()->following()->toggle($user->profile);
     }
 }

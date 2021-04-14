@@ -18,19 +18,18 @@
         },
         methods: {
             followUser(){
-                axios.post('/follow/' + this.userId)
+                axios.post('/en/follow/' + this.userId)
                     .then(response=>{
                         this.status= !this.status;
                         console.log(response.data);
                     })
                     .catch(errors=>{
                         if(errors.response.status===401){
-                            window.location='/login';
+                            window.location='/en/login';
                         }
                     });
             }
         },
-
         computed: {
             buttonText(){
                 return (this.status) ? 'Unfollow' : 'Follow';

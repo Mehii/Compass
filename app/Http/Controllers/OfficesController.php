@@ -21,25 +21,14 @@ class OfficesController extends Controller
     {
         $this->middleware('auth');
     }
+    public function index_office(string $language){
+        $follow=auth()->user()->following()->pluck('profiles.user_id');
 
-    #region search function, list sth in mainpage
-    //    public function search(string $language,string $request)
-    //    {
-    //        if ($request=='k'){
-    //            return view('search_view.search');
-    //        }
-    //    }
-    #endregion
+        $office_post=Office::whereIn('user_id',$follow)->get();
 
-    #region Show function alias findAll()
-    /* public function show(int $id)
- {
-     $office= Office::findOrFail($id);
-     //dd($user->cars);
-     return view('user_offers.office_show',[
-         'office'=>$office,
-     ]);
-}*/
+        return view('welcome')->with('office_post',$office_post);
+    }
+
 
     /**
      * @param string $language
@@ -204,7 +193,7 @@ class OfficesController extends Controller
     }
     #endregion
 
-    #region Destroy as FindOneByID
+    #region Destroy alias FindOneByID
     /**
      * @param string $language
      * @param int $office

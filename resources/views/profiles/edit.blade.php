@@ -50,22 +50,6 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="phone" class="col-md-4 col-form-label">{{__('Phone')}}</label>
-                        <input id="phone"
-                               type="text"
-                               class="form-control @error('phone') is-invalid @enderror"
-                               name="phone"
-                               value="{{$user->profile->phone}}"
-                               autocomplete="phone" autofocus
-                               pattern="[0-9]"
-                        placeholder="00-00-000-0000">
-                        @error('phone')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="form-group row">
                         <label for="image" class="col-mod-4 col-form-label">{{__('Profile Image')}}</label>
                         <input type="file" class="form-control-file" id="image" name="image">
                         @error('image')

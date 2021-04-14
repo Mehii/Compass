@@ -31,7 +31,7 @@
                         {{ $user->phone}}
                     </div>
                     <div>
-                        <div class="pr-5">{{ $user->profile->introduction}}</div>
+                        <div class="pr-5">{{$user->profile->introduction}}</div>
                     </div>
                     <div class="d-flex">
                         <div class="pr-5">{{__('Vehicle posted')}}: <strong>{{ $user->cars->count() }}</strong> </div>
@@ -40,6 +40,7 @@
                         <div class="pr-5">{{__('follower')}}: <strong>{{ $user->profile->followers->count() }}</strong></div>
                         <div class="pr-5">{{__('following')}}: <strong> {{ $user->following->count() }}</strong></div>
                     </div>
+
 
                     <div class="d-flex justify-content-between align-items-baseline">
                         @guest()

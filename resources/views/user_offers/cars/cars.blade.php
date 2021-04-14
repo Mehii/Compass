@@ -49,15 +49,6 @@
                     </div>
                 </div>
                 <div class="row">
-{{--                        <div class="col-xs-12 col-md-4 col-xl-4">--}}
-{{--                            <label for="type_of_it">City</label>--}}
-{{--                            <div class="form-group" style="width: 300px">--}}
-{{--                                <select class="car_type" name="type_of_it" form="type_of_it" id="type_of_it"  style="width: 150px">--}}
-{{--                                    <option value="Big">Big</option>--}}
-{{--                                    <option value="Small">Small</option>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <label for="type_of_it">{{__('Type')}}</label>
                         <div class="form-group" style="width: 100px">
