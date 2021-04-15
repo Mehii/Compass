@@ -18,7 +18,7 @@ class BoatsController extends Controller
 
         $boat_post=Boat::whereIn('user_id',$follow)->get();
 
-        return view('welcome')->with('boat_post',$boat_post);
+        return view('follow/boat_follow')->with('boat_post',$boat_post);
     }
     public function create()
     {

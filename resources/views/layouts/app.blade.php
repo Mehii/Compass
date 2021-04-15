@@ -67,6 +67,32 @@
                                 </div>
                             </li>
                         @endif
+                            @if (Auth::user())
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        @if (Auth::user())
+                                            {{ __('Followed providers') }}
+                                        @endif
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/{{app()->getLocale()}}/followed_car">
+                                            @if (Auth::user())
+                                                {{__('Cars')}}
+                                            @endif
+                                        </a>
+                                        <a class="dropdown-item" href="/{{app()->getLocale()}}/followed_office">
+                                            @if (Auth::user())
+                                                {{__('Properties')}}
+                                            @endif
+                                        </a>
+                                        <a class="dropdown-item" href="/{{app()->getLocale()}}/followed_boat">
+                                            @if (Auth::user())
+                                                {{__('Boats')}}
+                                            @endif
+                                        </a>
+                                    </div>
+                                </li>
+                            @endif
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

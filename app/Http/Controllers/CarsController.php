@@ -11,6 +11,13 @@ class CarsController extends Controller
     {
         $this->middleware('auth');
     }
+    public function index_car(string $language){
+        $follow=auth()->user()->following()->pluck('profiles.user_id');
+
+        $car_post=Car::whereIn('user_id',$follow)->get();
+
+        return view('follow/car_follow')->with('car_post',$car_post);
+    }
 
     public function create()
     {

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/','/en/register');
+Route::redirect('/','/en');
 
 Route::group(['prefix'=>'{language}'],function (){
     Route::get('/', function () {
@@ -25,7 +25,9 @@ Route::group(['prefix'=>'{language}'],function (){
     #region all
 
     #region search
-    Route::get('/','App\Http\Controllers\OfficesController@index_office');
+    Route::get('/followed_office','App\Http\Controllers\OfficesController@index_office');
+    Route::get('/followed_boat','App\Http\Controllers\BoatsController@index_boat');
+    Route::get('/followed_car','App\Http\Controllers\CarsController@index_car');
     #endregion
 
     #region follow

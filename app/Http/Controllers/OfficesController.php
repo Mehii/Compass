@@ -26,7 +26,7 @@ class OfficesController extends Controller
 
         $office_post=Office::whereIn('user_id',$follow)->get();
 
-        return view('welcome')->with('office_post',$office_post);
+        return view('follow/office_follow')->with('office_post',$office_post);
     }
 
 
