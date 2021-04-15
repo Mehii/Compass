@@ -126,8 +126,8 @@
     "Suitable": "Nem csak partmenti",
     "Not-suitable": "Part közeli",
     "Boat-type": "Típusa",
-
-
+    "Publish your boat": "Ossza meg hajóját!",
+    "Port": "Kikötő",
 
     "Edit your boat details": "Megváltoztatom az adatokat",
     "Made by: Henrik Horváth": "Készítette: Horváth Henrik",
@@ -138,5 +138,16 @@
     "Search": "Keresés",
     "Followed providers": "Követett felhasználók",
     "Boats": "Hajók",
-    "Cars": "Autók"
+    "Cars": "Autók",
+    "Registered users": "Felhasználók",
+    "Find what you looking for!": "Találd meg amire vágysz!",
+    "Content": "Tartalom",
+    "Posted boats": "Közzétett hajók",
+    "Posted cars": "Közzétett autók",
+    "Posted properties": "Közzétett ingatlanok",
+    "Nobody posted boat": "Senki sem tett közzé hajót.",
+    "Check out other users": "Tekints meg más felhasználókat.",
+    "Nobody posted car": "Senki sem tett közzé autót.",
+    "Nobody posted properties": "Senki sem tett közzé ingatlant.",
+    "Not available": "Nem elérhető adat."
 }

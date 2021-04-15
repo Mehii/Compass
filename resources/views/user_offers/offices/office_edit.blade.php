@@ -403,7 +403,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-12">
                         <label for="office_image" class="col-mod-4 col-form-label"><h2>{{__('Image')}}</h2></label>
                         <div class="form-group">
                             <input type="file" class="form-control-file" id="office_image" name="office_image" multiple>
@@ -412,8 +412,10 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <button class="btn btn-primary float-right">{{__('Edit your property details')}}</button>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-primary">{{__('Edit your property details')}}</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@
     <section>
         <div class="container">
             <div class="row">
-                @foreach($office_post as $office)
+                @forelse($office_post as $office)
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/office/{{$office->id}}">
                             <div>
@@ -29,7 +29,12 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                    @empty
+                        <div class="col-12">
+                            <h2>{{__('Nobody posted properties')}}</h2>
+                            <h2><a href="/{{app()->getLocale()}}/registered_users"> {{__('Check out other users')}}</a></h2>
+                        </div>
+                    @endforelse
             </div>
         </div>
     </section>

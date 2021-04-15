@@ -16,7 +16,7 @@
     <section>
         <div class="container">
             <div class="row">
-                @foreach($boat_post as $boat)
+                @forelse($boat_post as $boat)
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/boat/{{$boat->id}}">
                             <div>
@@ -29,7 +29,12 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12">
+                        <h2>{{__('Nobody posted boat')}}</h2>
+                        <h2><a href="/{{app()->getLocale()}}/registered_users"> {{__('Check out other users')}}</a></h2>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>

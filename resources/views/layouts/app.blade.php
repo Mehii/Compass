@@ -25,7 +25,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="/{{app()->getLocale()}}/">
                    Compass
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -92,7 +92,13 @@
                                         </a>
                                     </div>
                                 </li>
+
                             @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="/{{app()->getLocale()}}/registered_users">
+                                    {{ __('Registered users') }}
+                                </a>
+                            </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

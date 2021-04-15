@@ -118,12 +118,6 @@
                 <div class="col-md-6 col-xl-2">
                     {{  $car->type_of_gearbox }}
                 </div>
-                <div class="col-md-6 col-xl-2">
-                    {{__('ABS')}}
-                </div>
-                <div class="col-md-6 col-xl-2">
-                    {{ $car->abs }}
-                </div>
             </div>
         </div>
 
@@ -133,17 +127,45 @@
                     <h2>{{__('Extras')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Alarm')}}: {{ $car->alarm }}
+                    <b>{{__('Alarm')}}:</b>
+                    @if(($car->alarm)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Bluetooth')}}:{{ $car->bluetooth}}
+                    <b>{{__('Bluetooth')}}:</b>
+                    @if(( $car->bluetooth)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('DashCam')}}: {{ $car->dashcam}}
+                    <b>{{__('DashCam')}}:</b>
+                    @if(($car->dashcam)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
 
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Backwards radar')}}: {{ $car->back_radar}}
+                    <b>{{__('Backwards radar')}}:</b>
+                    @if(($car->back_radar)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
+                </div>
+                <div class="col-xs-6 col-md-4 col-xl-2">
+                    <b>{{__('ABS')}}:</b>
+                    @if(($car->abs)==1)
+                        {{__('Available')}}
+                    @else
+                        {{__('Doesnt have')}}
+                    @endif
                 </div>
 
             </div>
@@ -155,10 +177,10 @@
                     <h2>{{__('Payments')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Cost/Week')}}:{{ $car->car_cost_of_renting}}
+                    {{__('Cost/Week')}}:{{ $car->car_cost_of_renting}} €
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Deposit')}}: {{ $car->car_deposit }}
+                    {{__('Deposit')}}: {{ $car->car_deposit }} €
                 </div>
             </div>
         </div>

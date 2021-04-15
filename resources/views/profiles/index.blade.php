@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($user->cars as $car)
+                @forelse($user->cars as $car)
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/car/{{$car->id}}">
                             <div>
@@ -97,7 +97,12 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12">
+                        <h4>{{__('Not available')}}</h4>
+                    </div>
+
+                @endforelse
             </div>
         </div>
         <div class="container">
@@ -107,7 +112,7 @@
                         {{__('Properties')}}
                     </h2>
                 </div>
-                @foreach($user->offices as $office)
+                @forelse($user->offices as $office)
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/office/{{$office->id}}">
                             <div>
@@ -120,7 +125,11 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                    @empty
+                    <div class="col-12">
+                        <h4>{{__('Not available')}}</h4>
+                    </div>
+                    @endforelse
             </div>
         </div>
         <div class="container">
@@ -130,7 +139,7 @@
                         {{__('Boat')}}
                     </h2>
                 </div>
-                @foreach($user->boats as $boat)
+                @forelse($user->boats as $boat)
                     <div class="col-md-4 pb-4">
                         <a href="/{{app()->getLocale()}}/myprofile/items/boat/{{$boat->id}}">
                             <div>
@@ -143,7 +152,11 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12">
+                        <h4>{{__('Not available')}}</h4>
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>

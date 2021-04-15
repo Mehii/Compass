@@ -64,7 +64,6 @@ class OfficesController extends Controller
         $data=request()->validate([
             'name_of_the_city'=>'required',
             'street'=>'required',
-//          'type_of_property'=>'required',
 
             'square_meter'=>'required',
             'building_floor'=>'',
@@ -102,7 +101,6 @@ class OfficesController extends Controller
         auth()->user()->offices()->create([
             'name_of_the_city'=>$data['name_of_the_city'],
             'street'=>$data['street'],
-//          'type_of_property'=>$data['type_of_property'],
 
             'square_meter'=>$data['square_meter'],
             'building_floor'=>$data['building_floor'],

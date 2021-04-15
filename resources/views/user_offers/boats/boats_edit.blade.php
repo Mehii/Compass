@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-4 col-xl-4">
-                        <label for="street">{{__('Street')}}</label>
+                        <label for="street">{{__('Port')}}</label>
                         <div class="form-group" style="width: 200px">
                             <input id="street"
                                    type="text"

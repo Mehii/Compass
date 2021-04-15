@@ -34,9 +34,8 @@ Route::group(['prefix'=>'{language}'],function (){
     Route::post('/follow/{user}','App\Http\Controllers\FollowsController@store');
     #endregion
 
-    #region out of work
-    //Route::get('/home','App\Http\Controllers\HomeController@index')->name('home');
-    //Route::get('/home', [App\Http\Controllers\ProfilesController::class, 'index'])->name('home'); Same as the what i have above it
+    #region Return registered_users_list
+    Route::get('/registered_users','App\Http\Controllers\HomeController@index_users');
     #endregion
 
     #region Create new item

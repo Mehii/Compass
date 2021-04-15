@@ -6,7 +6,7 @@
         <div class="publish">
             <div class="row">
                 <div class="col-12">
-                    <h1>{{__('Publish your Ship')}}</h1>
+                    <h1>{{__('Publish your boat')}}</h1>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-4 col-xl-4">
-                        <label for="street">{{__('Street')}}</label>
+                        <label for="street">{{__('Port')}}</label>
                         <div class="form-group" style="width: 200px">
                             <input id="street"
                                    type="text"
@@ -65,7 +65,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="boat_type" class="col-md-4 col-form-label text-md-left" style="width: 200px">{{__('Boat-type')}}</label>
+                        <label for="boat_type" class="col-md-4 col-form-label text-md-left " style="width: 200px">{{__('Boat-type')}}</label>
                         <div class="form-group">
                             <select id="boat_type" name="boat_type" class="form-control">
                                 <option value="Sail_Boat">{{__('Sail Boat')}}</option>
@@ -82,7 +82,7 @@
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <label for="boat_manufacturer">{{__('Boat manufacturer')}}</label>
-                        <div class="form-group" style="width: 100px">
+                        <div class="form-group manufactuer" style="width: 100px">
                             <input id="boat_manufacturer"
                                    type="text"
                                    class="form-control @error('boat_manufacturer') is-invalid @enderror"

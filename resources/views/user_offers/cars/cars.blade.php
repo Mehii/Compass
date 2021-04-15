@@ -131,8 +131,9 @@
                     </div>
 
                     <div class="col-xs-12 col-md-3 col-xl-2">
-                        <label for="automatic_windows">{{__('Automatic windows')}}</label>
                         <div class="form-group" style="width: 100px">
+                        <label for="automatic_windows">{{__('Automatic windows')}}</label>
+                            <input type='hidden' value='0' name='automatic_windows'>
                             <input type='checkbox'
                                    id="automatic_windows"
                                    name="automatic_windows"
@@ -157,11 +158,12 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="alarm">{{__('Alarm')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='alarm'>
+                            <input type='checkbox'
                                    id="alarm"
                                    name="alarm"
                                    value="1"
-                                   autocomplete="">
+                                   autocomplete="0">
                             @error('alarm')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -173,7 +175,8 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="bluetooth">{{__('Bluetooth')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='bluetooth'>
+                            <input type='checkbox'
                                    id="bluetooth"
                                    name="bluetooth"
                                    value="1"
@@ -189,7 +192,8 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="dashcam">{{__('Dashcam')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='dashcam'>
+                            <input type='checkbox'
                                    id="dashcam"
                                    name="dashcam"
                                    value="1"
@@ -205,7 +209,8 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="back_radar">{{__('Backwards radar')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='back_radar'>
+                            <input type='checkbox'
                                    id="back_radar"
                                    name="back_radar" value="1"
                                    autocomplete="">
@@ -221,7 +226,8 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="air_condition">{{__('A/C')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='air_condition'>
+                            <input type='checkbox'
                                    id="air_condition"
                                    name="air_condition" value="1"
                                    autocomplete="">
@@ -236,7 +242,8 @@
                     <div class="col-xs-12 col-md-3 col-xl-2">
                         <div class="form-group" style="width: 100px">
                             <label for="abs">{{__('ABS')}}</label>
-                            <input type='radio'
+                            <input type='hidden' value='0' name='abs'>
+                            <input type='checkbox'
                                    id="abs"
                                    name="abs"
                                    value="1"
@@ -262,10 +269,11 @@
                         <label for="car_cost_of_renting">{{__('Cost/Week')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="car_cost_of_renting"
-                                   type="number" step="50"
+                                   type="number" step="50" min="0"
                                    class="form-control @error('car_cost_of_renting') is-invalid @enderror"
                                    name="car_cost_of_renting"
-                                   value="{{old('car_cost_of_renting')}}">
+                                   value="{{old('car_cost_of_renting')}}"
+                                   placeholder="€">
 
                             @error('car_cost_of_renting')
                             <span class="invalid-feedback" role="alert">
@@ -278,10 +286,11 @@
                         <label for="car_deposit">{{__('Deposit')}}</label>
                         <div class="form-group" style="width: 100px">
                             <input id="car_deposit"
-                                   type="number" step="50"
+                                   type="number" step="50" min="0"
                                    class="form-control @error('car_deposit') is-invalid @enderror"
                                    name="car_deposit"
-                                   value="{{ old('car_deposit') }}">
+                                   value="{{ old('car_deposit') }}"
+                                placeholder="€">
                             @error('car_deposit')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

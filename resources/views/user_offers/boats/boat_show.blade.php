@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 align-items-center">
-                    <div>
+                    <div class="">
                         <img src="{{ $boat->user->profile->profileImage() }}" class="rounded-circle mid">
                     </div>
                     <div class="font-weight-bold">
@@ -170,10 +170,10 @@
                     <h2>{{__('Payments')}}</h2>
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Cost/Week')}}:{{ $boat->boat_cost_of_renting}}
+                    {{__('Cost/Week')}}:{{ $boat->boat_cost_of_renting}} €
                 </div>
                 <div class="col-xs-6 col-md-4 col-xl-2">
-                    {{__('Deposit')}}: {{ $boat->boat_deposit }}
+                    {{__('Deposit')}}: {{ $boat->boat_deposit }} €
                 </div>
 
             </div>
